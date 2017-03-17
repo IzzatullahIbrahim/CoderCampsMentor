@@ -4,8 +4,7 @@ namespace CoderCampsMentor {
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider,
-        filepickerProvider
-    ) => {
+        filepickerProvider) => {
         filepickerProvider.setKey('AksRZcU5qRLawgTdZmZfpz');
         // Define routes
         $stateProvider
@@ -135,6 +134,7 @@ namespace CoderCampsMentor {
         $locationProvider.html5Mode(true);
     });
 
+
     angular.module('CoderCampsMentor').factory('authInterceptor', (
         $q: ng.IQService,
         $window: ng.IWindowService,
@@ -154,8 +154,10 @@ namespace CoderCampsMentor {
             }
         })
     );
-
     angular.module('CoderCampsMentor').config(function ($httpProvider) {
         $httpProvider.interceptors.push('authInterceptor');
     });
+
+
+
 }

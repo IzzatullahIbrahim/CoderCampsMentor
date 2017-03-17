@@ -16,6 +16,5 @@
             return this.usersResource.save(profileToSave).$promise;
         }
     }
-
     angular.module('CoderCampsMentor').service('profileService', ProfileService);
 }

@@ -14,7 +14,6 @@ namespace CoderCampsMentor.API
     public class UserCategoriesController : Controller
     {
         private IUserCategoriesService _ucService;
-
         public UserCategoriesController(IUserCategoriesService ucService)
         {
             _ucService = ucService;
