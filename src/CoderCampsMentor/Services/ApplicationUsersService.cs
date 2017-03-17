@@ -29,6 +29,7 @@ namespace CoderCampsMentor.Services
                                               }).ToList();
             return appUsers;
         }
+
         public ApplicationUser GetUser(string id)
         {
             ApplicationUser user = (from u in _repo.Query<ApplicationUser>()
@@ -42,14 +43,15 @@ namespace CoderCampsMentor.Services
                                         ConcurrencyStamp = u.ConcurrencyStamp,
                                         Picture = u.Picture,
                                         UserName = u.UserName
-
                                     }).FirstOrDefault();
             return user;
         }
+
         public void UpdateUser(ApplicationUser user)
         {
             _repo.Update(user);
         }
+
         public void SaveProfile(ApplicationUser user, string id)
         {
             var input = (from u in _repo.Query<ApplicationUser>()

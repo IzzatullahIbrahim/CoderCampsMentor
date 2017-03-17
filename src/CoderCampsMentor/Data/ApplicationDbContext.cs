@@ -15,6 +15,7 @@ namespace CoderCampsMentor.Data
 
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<UserSubCategory> UserSubCategories { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
