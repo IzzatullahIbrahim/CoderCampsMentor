@@ -112,6 +112,7 @@
             })
         }
     }
+
     export class MyProfileController {
         public user;
 
@@ -119,6 +120,7 @@
 
             this.getUserById();
         }
+
         private getUserById() {
             this.profileService.getUserById(this.$stateParams['id']).then((data) => {
                 this.user = data;

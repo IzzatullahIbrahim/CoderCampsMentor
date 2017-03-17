@@ -21,7 +21,5 @@ namespace CoderCampsMentor.API
             var user = this.User;
             return new string[] { "The Cake is a Lie!", "Darth Vader is Luke's Father." };
         }
-
-
     }
 }
