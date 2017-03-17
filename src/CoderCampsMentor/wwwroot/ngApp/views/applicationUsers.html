@@ -1,0 +1,26 @@
+﻿{{controller.message}}
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+
+            <th>User pic</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="au in controller.appUsers">
+            <td><img ng-src="{{au.picture}}" style="height:28px; width:28px" /></td>
+            <td>
+                <a ui-sref="applicationUser({id: au.id})">{{au.firstName}} {{au.lastName}}</a>
+            </td>
+            <td>
+                <a ui-sref="addCategoryToUser({id: au.id})">Add a Category</a>
+            </td>
+            <td>
+                <a ui-sref="addCategoryAndSubCategoryToUser({id: au.id})">Add a Category and Sub Category</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

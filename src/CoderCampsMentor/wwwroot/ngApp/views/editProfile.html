@@ -1,0 +1,37 @@
+﻿<div>
+    <p>Current Picture</p>
+    <img ng-src="{{controller.user.picture}}" style="height:128px; width:128px" />
+</div>
+<h6>{{controller.file.filename}}</h6>
+<div>
+    <fieldset>
+        <form ng-submit="controller.saveProfile()">
+
+            <div>
+                <button type="button" ng-click="controller.pickFile()" class="btn btn-primary">Upload Image</button>
+                <img ng-src="{{controller.file.url | fpConvert:{w: 100} }}" alt="{{controller.file.title}}" />
+                <br />
+                <br />
+                <button type="submit" class="btn btn-success">Save Changes</button>
+                <br />
+            </div>
+        </form>
+    </fieldset>
+    <button ng-click="controller.defaultPic()" class="btn btn-warning">Default pic</button>
+</div>
+<div>
+    <fieldset>
+        <form ng-submit="controller.editProfile()" class="form form-control">
+            <label class="form-group-sm">First Name</label>
+            <input type="text" ng-model="controller.user.firstName" />
+            <label>Last Name</label>
+            <input type="text" ng-model="controller.user.lastName" />
+            <label>Email</label>
+            <input type="text" ng-model="controller.user.email" />
+            <label>UserName</label>
+            <input type="text" ng-model="controller.user.userName" />
+
+            <button type="submit" class="btn btn-success" ng-click="controller.submit()">Save Changes</button>
+        </form>
+    </fieldset>
+</div>

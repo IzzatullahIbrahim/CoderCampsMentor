@@ -1,0 +1,33 @@
+﻿{{controller.message}}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Sub Category Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{controller.subCategory.subCategoryName}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Profile Pic</th>
+            <td>List of People who teach this (C#, .Net, JavaScript)</td>
+            <td>LastName</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="au in controller.subCategory.applicationUsers">
+            <td><img ng-src="{{au.picture}}" style="height:28px; width:28px" /></td>
+            <td>
+                <a ui-sref="applicationUser({id: au.id})">{{au.firstName}}</a>
+            </td>
+            <td>{{au.lastName}}</td>
+        </tr>
+    </tbody>
+</table>

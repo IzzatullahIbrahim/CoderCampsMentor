@@ -1,0 +1,58 @@
+﻿{{controller.message}}
+
+<div class="col-lg-8 col-lg-offset-2">
+    <br />
+    <img ng-src="{{controller.userCategory.picture}}" style="height:128px; width:128px" />
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{controller.userCategory.firstName}}</td>
+            <td>{{controller.userCategory.lastName}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>List of Category skills (Programming, music, data science, etc)</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li ng-repeat="cat in controller.userCategory.categories">
+                        <a ui-sref="category({id: cat.id})">{{cat.categoryName}}</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>List of Sub-Category skills (.Net, C#, Java, etc)</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li ng-repeat="subCat in controller.userSubCategory.subCategories">
+                        <a ui-sref="subCategory({id: subCat.id})">{{subCat.subCategoryName}}</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
