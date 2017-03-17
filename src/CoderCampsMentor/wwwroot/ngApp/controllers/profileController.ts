@@ -3,8 +3,8 @@
     export class ProfileController {
         public file;
         public user;
-
         constructor(private profileService: CoderCampsMentor.Services.ProfileService, private filepickerService, private $scope: ng.IScope, private $state: ng.ui.IStateService, private accountService: CoderCampsMentor.Services.AccountService, private $http: ng.IHttpService) {
+
             this.getUserById();
         }
 
@@ -13,23 +13,18 @@
                 this.user = data;
             });
         }
-
         public isLoggedIn() {
             return this.accountService.isLoggedIn();
         }
-
         public logout() {
             this.accountService.logout();
         }
-
         public getUserName() {
             return this.accountService.getUserName();
         }
-
         public submit() {
             this.$state.go('home');
         }
-
         public pickFile() {
             this.filepickerService.pick(
                 {
@@ -46,7 +41,6 @@
             this.user.picture = this.file.url;
             this.$scope.$apply(); // force page to update
         }
-
         public defaultPic() {
             if (this.user.picture == null) {
                 this.user.picture = "/images/avatar.jpg";
@@ -59,7 +53,6 @@
                 this.$state.go('home');
             }
         }
-
         public saveProfile() {
             if (this.user.picture == !null) {
                 this.profileService.saveProfile(this.user);
@@ -74,11 +67,13 @@
                     console.log("something went wrong");
                 })
         }
-
         public editProfile() {
             this.profileService.saveProfile(this.user).then((data) => {
                 this.$state.go(`home`);
             });
         }
+
+
     }
+
 }

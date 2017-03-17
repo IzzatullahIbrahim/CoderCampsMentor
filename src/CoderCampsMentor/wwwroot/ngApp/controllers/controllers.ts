@@ -4,6 +4,7 @@ namespace CoderCampsMentor.Controllers {
         public message = 'Hello from the home page!';
     }
 
+
     export class SecretController {
         public secrets;
 
@@ -13,6 +14,7 @@ namespace CoderCampsMentor.Controllers {
             });
         }
     }
+
 
     export class AboutController {
         public message = 'Hello from the about page!';

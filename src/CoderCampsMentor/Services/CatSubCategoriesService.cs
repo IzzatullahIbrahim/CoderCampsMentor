@@ -9,6 +9,7 @@ namespace CoderCampsMentor.Services
 {
     public class CatSubCategoriesService : ICatSubCategoriesService
     {
+
             private IGenericRepository _repo;
 
             public CatSubCategoriesService(IGenericRepository repo)
