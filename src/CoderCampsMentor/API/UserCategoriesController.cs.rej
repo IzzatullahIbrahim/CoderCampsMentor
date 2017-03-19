@@ -1,0 +1,9 @@
+diff a/src/CoderCampsMentor/API/UserCategoriesController.cs b/src/CoderCampsMentor/API/UserCategoriesController.cs	(rejected hunks)
+@@ -14,7 +14,6 @@
+     public class UserCategoriesController : Controller
+     {
+         private IUserCategoriesService _ucService;
+-
+         public UserCategoriesController(IUserCategoriesService ucService)
+         {
+             _ucService = ucService;

@@ -1,5 +1,7 @@
 ﻿{{controller.message}}
 
+<br />
+<input placeholder="Search" ng-model="search" />
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -7,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="sc in controller.subCategories">
+        <tr ng-repeat="sc in controller.subCategories|filter:{subCategoryName: search}">
             <td>
                 <a ui-sref="subCategory({id: sc.id})">{{sc.subCategoryName}}</a>
             </td>

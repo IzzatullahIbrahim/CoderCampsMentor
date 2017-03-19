@@ -134,7 +134,6 @@ namespace CoderCampsMentor {
         $locationProvider.html5Mode(true);
     });
 
-
     angular.module('CoderCampsMentor').factory('authInterceptor', (
         $q: ng.IQService,
         $window: ng.IWindowService,
@@ -157,7 +156,4 @@ namespace CoderCampsMentor {
     angular.module('CoderCampsMentor').config(function ($httpProvider) {
         $httpProvider.interceptors.push('authInterceptor');
     });
-
-
-
 }
