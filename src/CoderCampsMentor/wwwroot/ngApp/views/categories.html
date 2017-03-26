@@ -1,24 +1,26 @@
-﻿{{controller.message}}
+﻿<div ng-show="account.isLoggedIn()">
+    {{controller.message}}
 
-<br />
-<input placeholder="Search" ng-model="search" />
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <td>Category Name</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="c in controller.categories|filter:{categoryName: search}">
-            <td>
-                <a ui-sref="category({id: c.id})">{{c.categoryName}}</a>
-            </td>
-            <td>
-                <a ui-sref="editCategory({id: c.id })">Edit Category</a>
-            </td>
-            <td>
-                <button ng-click="controller.deleteCategory(c.id)">Delete Category</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <br />
+    <input placeholder="Search" ng-model="search" />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Category Name</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="c in controller.categories|filter:{categoryName: search}">
+                <td>
+                    <a ui-sref="category({id: c.id})">{{c.categoryName}}</a>
+                </td>
+                <td>
+                    <a ui-sref="editCategory({id: c.id })">Edit Category</a>
+                </td>
+                <td>
+                    <button ng-click="controller.deleteCategory(c.id)">Delete Category</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

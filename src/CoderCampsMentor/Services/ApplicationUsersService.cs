@@ -41,7 +41,7 @@ namespace CoderCampsMentor.Services
                                         Email = u.Email,
                                         ConcurrencyStamp = u.ConcurrencyStamp,
                                         Picture = u.Picture,
-                                        UserName = u.UserName
+                                        UserName = u.UserName,
 
                                     }).FirstOrDefault();
             return user;

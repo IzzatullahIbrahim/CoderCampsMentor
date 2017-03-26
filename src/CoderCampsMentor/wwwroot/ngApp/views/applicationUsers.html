@@ -1,27 +1,29 @@
-﻿{{controller.message}}
-<br />
-<input placeholder="Search" ng-model="search"/>
+﻿<div ng-show="account.isLoggedIn()">
+    {{controller.message}}
+    <br />
+    <input placeholder="Search" ng-model="search" />
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
 
-            <th>User pic</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="au in controller.appUsers|filter:{firstName: search}">
-            <td><img ng-src="{{au.picture}}" style="height:28px; width:28px" /></td>
-            <td>
-                <a ui-sref="applicationUser({id: au.id})">{{au.firstName}} {{au.lastName}}</a>
-            </td>
-            <td>
-                <a ui-sref="addCategoryToUser({id: au.id})">Add a Category</a>
-            </td>
-            <td>
-                <a ui-sref="addCategoryAndSubCategoryToUser({id: au.id})">Add a Category and Sub Category</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                <th>User pic</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="au in controller.appUsers|filter:{firstName: search}">
+                <td><img ng-src="{{au.picture}}" style="height:28px; width:28px" id="proPicBackground" /></td>
+                <td>
+                    <a ui-sref="applicationUser({id: au.id})">{{au.firstName}} {{au.lastName}}</a>
+                </td>
+                <td>
+                    <a ui-sref="addCategoryToUser({id: au.id})">Add a Category</a>
+                </td>
+                <td>
+                    <a ui-sref="addCategoryAndSubCategoryToUser({id: au.id})">Add a Category and Sub Category</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

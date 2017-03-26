@@ -1,52 +1,54 @@
-﻿{{controller.message}}
+﻿<div ng-show="account.isLoggedIn()">
+    {{controller.message}}
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <td>Category Name</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{controller.category.categoryName}}</td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Category Name</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{controller.category.categoryName}}</td>
+            </tr>
+        </tbody>
+    </table>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <td>List of SubCategory inside this Category</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <ul>
-                    <li ng-repeat="csc in controller.catSubCategory.subCategories">
-                        <a ui-sref="subCategory({id: csc.id})">{{csc.subCategoryName}}</a>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>List of SubCategory inside this Category</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul>
+                        <li ng-repeat="csc in controller.catSubCategory.subCategories">
+                            <a ui-sref="subCategory({id: csc.id})">{{csc.subCategoryName}}</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>User pic</th>
-            <td>List of People who teach this (Programming/Music)</td>
-            <td>LastName</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="au in controller.category.applicationUsers">
-            <td><img ng-src="{{au.picture}}" style="height:28px; width:28px" /></td>
-            <td>
-                <a ui-sref="applicationUser({id: au.id})">{{au.firstName}}</a>
-            </td>
-            <td>{{au.lastName}}</td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>User pic</th>
+                <td>List of People who teach this (Programming/Music)</td>
+                <td>LastName</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="au in controller.category.applicationUsers">
+                <td><img ng-src="{{au.picture}}" style="height:28px; width:28px" /></td>
+                <td>
+                    <a ui-sref="applicationUser({id: au.id})">{{au.firstName}}</a>
+                </td>
+                <td>{{au.lastName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

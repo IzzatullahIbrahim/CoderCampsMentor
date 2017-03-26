@@ -1,8 +1,10 @@
 <html ng-app="CoderCampsMentor">
 <head>
-    <title>CoderCampsMentor</title>
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/profile.css" rel="stylesheet" />
+
+    <title>CoderCampsMentor</title>
     <base href="/" />
 </head>
 <body ng-controller="AccountController as account">
@@ -11,12 +13,12 @@
         <div>
             <a href="/">Home</a> /
             <a href="/about">About</a> /
-            <a href="/applicationUsers">List of Users</a> /
-            <a href="/categories">List of Categories</a> /
-            <a href="/addCategory">Add a Category</a> /
-            <a href="/subCategories">List of Sub Categories</a> /
-            <a href="/addSubCategory">Add a SubCategory</a> /
-            <a href="/editProfile">Profile</a> /
+            <div ng-show="account.isLoggedIn()"><a href="/applicationUsers">List of Users</a> /</div>
+            <div ng-show="account.isLoggedIn()"><a href="/categories">List of Categories</a> /</div>
+            <div ng-show="account.isLoggedIn()"><a href="/addCategory">Add a Category</a> /</div>
+            <div ng-show="account.isLoggedIn()"><a href="/subCategories">List of Sub Categories</a> /</div>
+            <div ng-show="account.isLoggedIn()"><a href="/addSubCategory">Add a SubCategory</a> /</div>
+            <div ng-show="account.isLoggedIn()"><a ui-sref="profile">Profile</a> /</div>
 
             <a href="/secret">Secret</a> /
             <a href="/login" ng-show="!account.isLoggedIn()">Login</a>
@@ -24,12 +26,12 @@
             <div ng-show="account.isLoggedIn()">
                 [{{account.getUserName()}}]
             </div>
-            </div>
+        </div>
         <hr />
 
         <ui-view></ui-view>
-    </div>
 
+    </div>
     <!-- Library Files -->
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-resource/angular-resource.js"></script>
@@ -38,9 +40,9 @@
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!--File Picker-->
-
     <script src="~/bower_components/angular-filepicker/dist/angular_filepicker.min.js"></script>
     <script src="~/bower_components/filepicker-js/filepicker.min.js"></script>
+
 
     <!-- App Files-->
     <script src="/ngapp/app.js"></script>

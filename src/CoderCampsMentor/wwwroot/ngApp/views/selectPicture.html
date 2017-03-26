@@ -1,24 +1,25 @@
-﻿
-<h5>Please select a picture for your profile</h5>
-<div>
-    <img ng-src="{{controller.user.picture}}" style="height:128px; width:128px" />
-</div>
-<h6>{{controller.file.filename}}</h6>
-<div>
-    <fieldset>
-        <form ng-submit="controller.saveProfile()">
+﻿<div ng-show="account.isLoggedIn()">
 
-            <div>
-                <button type="button" ng-click="controller.pickFile()" class="btn btn-primary">Upload Image</button>
-                <img ng-src="{{controller.file.url | fpConvert:{w: 100} }}" alt="{{controller.file.title}}" />
-                <br />
-                <br />
-                <button type="submit" class="btn btn-success">Save</button>
-                <br />
-            </div>
-        </form>
-    </fieldset>
-    <br />
-    <h5>Skip to move on don't worry we will select a picture for you</h5>
-    <button ng-click="controller.defaultPic()" class="btn btn-warning">Skip</button>
+    <h5>Please select a picture for your profile</h5>
+    <div>
+        <img ng-src="{{controller.user.picture}}" style="height:128px; width:128px" id="proPicBackground" />
+    </div>
+    <h6>{{controller.file.filename}}</h6>
+    <div>
+        <fieldset>
+            <form ng-submit="controller.saveProfile()">
+                <div>
+                    <button type="button" ng-click="controller.pickFile()" class="btn btn-primary">Upload Image</button>
+                    <img ng-src="{{controller.file.url | fpConvert:{w: 100} }}" alt="{{controller.file.title}}" />
+                    <br />
+                    <br />
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <br />
+                </div>
+            </form>
+        </fieldset>
+        <br />
+        <h5>Skip to move on don't worry we will select a picture for you</h5>
+        <button ng-click="controller.defaultPic()" class="btn btn-warning">Skip</button>
+    </div>
 </div>

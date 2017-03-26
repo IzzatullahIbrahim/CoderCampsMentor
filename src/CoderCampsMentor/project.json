@@ -42,8 +42,9 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
-  },
+    },
+    "Sendgrid": "9.1.0",
+    "CKEditor": "3.6.4"  },
 
   "tools": {
     "BundlerMinifier.Core": "2.0.238",

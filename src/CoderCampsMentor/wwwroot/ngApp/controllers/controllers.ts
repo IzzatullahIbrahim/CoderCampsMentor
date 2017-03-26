@@ -1,9 +1,9 @@
 namespace CoderCampsMentor.Controllers {
 
     export class HomeController {
-        public message = 'Hello from the home page!';
+        public message = 'Hello please login/register';
+        public loginMessage = 'Welcome Home';
     }
-
 
     export class SecretController {
         public secrets;
@@ -14,7 +14,6 @@ namespace CoderCampsMentor.Controllers {
             });
         }
     }
-
 
     export class AboutController {
         public message = 'Hello from the about page!';

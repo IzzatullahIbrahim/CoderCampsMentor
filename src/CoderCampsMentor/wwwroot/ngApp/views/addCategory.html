@@ -1,8 +1,9 @@
 ﻿{{controller.message}}
+<div ng-show="account.isLoggedIn()">
+    <form ng-submit="controller.addCategory();">
+        <label>Category Name: </label>
+        <input type="text" ng-model="controller.category.categoryName" />
 
-<form ng-submit="controller.addCategory();">
-    <label>Category Name: </label>
-    <input type="text" ng-model="controller.category.categoryName" />
-
-    <button>Add a Category</button>
-</form>
+        <button>Add a Category</button>
+    </form>
+</div>

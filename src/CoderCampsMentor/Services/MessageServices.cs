@@ -1,3 +1,5 @@
+﻿using SendGrid;
+using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +14,25 @@ namespace CoderCampsMentor.Services
     {
         public Task SendEmailAsync(string email, string subject, string message)
         {
-            // Plug in your email service here to send an email.
+            var SendGridKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
+            Execute(SendGridKey, email, subject, message).Wait();
             return Task.FromResult(0);
         }
 
+        public async Task Execute(string apiKey, string subject, string msg, string email)
+        {
+            var client = new SendGridClient(apiKey);
+            var myMsg = new SendGridMessage()
+            {
+                From = new EmailAddress("codercampsmentor.com", "Example User"),
+                Subject = "Sending with SendGrid is Fun",
+                PlainTextContent = "and easy to do anywhere, even with C#",
+                HtmlContent = "<strong>and easy to do anywhere, even with C#</strong>"
+            };
+            myMsg.AddTo(new EmailAddress(email));
+            var response = await client.SendEmailAsync(myMsg);
+
+        }
         public Task SendSmsAsync(string number, string message)
         {
             // Plug in your SMS service here to send a text message.
