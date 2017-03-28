@@ -4,7 +4,8 @@ namespace CoderCampsMentor {
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider,
-        filepickerProvider) => {
+        filepickerProvider
+    ) => {
         filepickerProvider.setKey('AksRZcU5qRLawgTdZmZfpz');
         // Define routes
         $stateProvider
@@ -86,6 +87,12 @@ namespace CoderCampsMentor {
                 controller: CoderCampsMentor.Controllers.ApplicationUserController,
                 controllerAs: 'controller'
             })
+            .state('editProfile', {
+                url: '/editProfile',
+                templateUrl: '/ngApp/views/editProfile.html',
+                controller: CoderCampsMentor.Controllers.ProfileController,
+                controllerAs: 'controller'
+            })
             .state('secret', {
                 url: '/secret',
                 templateUrl: '/ngApp/views/secret.html',
@@ -128,10 +135,10 @@ namespace CoderCampsMentor {
                 controller: CoderCampsMentor.Controllers.CodeController,
                 controllerAs: 'controller'
             })
-            .state('editProfile', {
-                url: '/editProfile',
-                templateUrl: '/ngApp/views/editProfile.html',
-                controller: CoderCampsMentor.Controllers.ProfileController,
+            .state('videoCall', {
+                url: '/videoCall',
+                templateUrl: '/ngApp/views/videoCall.html',
+                controller: CoderCampsMentor.Controllers.VideoCallController,
                 controllerAs: 'controller'
             })
             .state('notFound', {

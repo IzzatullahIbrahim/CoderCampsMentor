@@ -1,6 +1,6 @@
 ﻿<div ng-show="account.isLoggedIn()">
     <br />
-    <button class="btn btn-warning" ng-click="getCategory()"><a ui-sref="editProfile"> Edit Profile</a></button>
+    <a ui-sref="editProfile" class="btn btn-warning" ng-click="getCategory()"> Edit Profile</a>
     <div class="col-lg-8 col-lg-offset-2">
         <br />
         <img class="dp" ng-src="{{controller.userCategory.picture}}" style="height:128px; width:128px" id="proPicBackground" />

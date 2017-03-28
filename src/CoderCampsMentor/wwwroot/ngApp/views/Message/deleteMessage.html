@@ -1,0 +1,31 @@
+﻿<link href="/css/AboutStyleSheet.css" rel="stylesheet" />
+<div class="messages">
+    <div class="panel">
+        <div class="panel-heading borderSeaGreen">
+            <ul class="headerInfo ">
+                <li class="subject"><strong>Subject:</strong> {{controller.comm.subject}}</li>
+                <li><strong>Date:</strong> {{controller.comm.dateSent|date}}</li>
+                <li><strong>From:</strong> {{controller.comm.sendingUser.userName}}</li>
+            </ul>
+        </div>
+        <div class="panel-body borderSeaGreen">
+            <div class="verify text-center">
+                Are you sure you want to <strong class="text-danger">delete</strong> this message?<br /><br />
+                <button ng-click="controller.deleteCommById()" class="btn btn-danger" value="Delete Message">Yes</button>
+            </div>
+            <div class="deleting">
+                {{controller.comm.msg}}
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-md-2 text-left">
+                    <a href="/message/inbox"><span class="glyphicon glyphicon-menu-left"></span> Inbox</a>
+                </div>
+                <div class="col-md-8"></div>
+                <div class="col-md-2 text-right">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
