@@ -24,6 +24,14 @@
             <input ng-model="controller.registerUser.email" />
         </div>
         <div>
+            <div>
+                <label>First Name:</label>
+                <input ng-model="controller.registerUser.firstName" />
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <input ng-model="controller.registerUser.lastName" />
+            </div>
             <label>Password:</label>
             <input ng-model="controller.registerUser.password" />
         </div>
@@ -32,18 +40,14 @@
             <input ng-model="controller.registerUser.confirmPassword" />
         </div>
         <div>
-            <label>First Name:</label>
-            <input ng-model="controller.registerUser.firstName" />
+            <label>Location:</label>
+            <select id="ddlViewBy">
+                <option ng-model="controller.registerUser.location">Seattle, WA</option>
+                <option ng-model="controller.registerUser.location"selected="selected">Phoenix, AZ</option>
+                <option ng-model="controller.registerUser.location">Houston, TX</option>
+            </select>
         </div>
-        <div>
-            <label>Last Name:</label>
-            <input ng-model="controller.registerUser.lastName" />
-        </div>
-        <div>
-            <label>User Name:</label>
-            <input ng-model="controller.registerUser.userName" />
-        </div>
-
+        <br />
         <input type="submit" value="Register" />
     </form>
 

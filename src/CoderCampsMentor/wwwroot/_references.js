@@ -18,6 +18,7 @@
 /// <reference path="ngapp/controllers/controllers.js" />
 /// <reference path="ngapp/controllers/profilecontroller.js" />
 /// <reference path="ngapp/controllers/subcategoriescontroller.js" />
+/// <reference path="ngapp/javascript/messagepopup.js" />
 /// <reference path="ngapp/services/accountservice.js" />
 /// <reference path="ngapp/services/profileservice.js" />
 /// <reference path="ngapp/services/services.js" />

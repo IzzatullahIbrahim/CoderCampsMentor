@@ -34,6 +34,8 @@ namespace CoderCampsMentor.Migrations
 
                     b.Property<string>("LastName");
 
+                    b.Property<string>("Location");
+
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");

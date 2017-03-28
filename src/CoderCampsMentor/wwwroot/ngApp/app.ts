@@ -81,9 +81,9 @@ namespace CoderCampsMentor {
                 controllerAs: 'controller'
             })
             .state('profile', {
-                url: '/profile',
+                url: '/profile/:id',
                 templateUrl: '/ngApp/views/profile.html',
-                controller: CoderCampsMentor.Controllers.ProfileController,
+                controller: CoderCampsMentor.Controllers.ApplicationUserController,
                 controllerAs: 'controller'
             })
             .state('secret', {
@@ -122,10 +122,16 @@ namespace CoderCampsMentor {
                 controller: CoderCampsMentor.Controllers.ProfileController,
                 controllerAs: 'controller'
             })
+            .state('code', {
+                url: '/code',
+                templateUrl: '/ngApp/views/code.html',
+                controller: CoderCampsMentor.Controllers.CodeController,
+                controllerAs: 'controller'
+            })
             .state('editProfile', {
-                url: '/editProfile/:id',
+                url: '/editProfile',
                 templateUrl: '/ngApp/views/editProfile.html',
-                controller: CoderCampsMentor.Controllers.EditApplicationUserController,
+                controller: CoderCampsMentor.Controllers.ProfileController,
                 controllerAs: 'controller'
             })
             .state('notFound', {

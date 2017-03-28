@@ -1,21 +1,23 @@
 ﻿<div ng-show="account.isLoggedIn()">
     <br />
-    <button class="btn btn-warning"><a ui-sref="editProfile ({id: controller.user.id})"> Edit Profile</a></button>
+    <button class="btn btn-warning" ng-click="getCategory()"><a ui-sref="editProfile"> Edit Profile</a></button>
     <div class="col-lg-8 col-lg-offset-2">
         <br />
-        <img ng-src="{{controller.user.picture}}" style="height:128px; width:128px" id="proPicBackground" />
+        <img class="dp" ng-src="{{controller.userCategory.picture}}" style="height:128px; width:128px" id="proPicBackground" />
     </div>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <td>First Name</td>
                 <td>Last Name</td>
+                <td>Location</td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>{{controller.user.firstName}}</td>
-                <td>{{controller.user.lastName}}</td>
+                <td>{{controller.userCategory.firstName}}</td>
+                <td>{{controller.userCategory.lastName}}</td>
+                <td>{{controller.userCategory.location}}</td>
             </tr>
         </tbody>
     </table>

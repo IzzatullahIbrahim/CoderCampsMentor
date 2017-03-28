@@ -8,8 +8,8 @@ using CoderCampsMentor.Data;
 namespace CoderCampsMentor.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170317044724_tables")]
-    partial class tables
+    [Migration("20170327194729_locations")]
+    partial class locations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,8 @@ namespace CoderCampsMentor.Migrations
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
+
+                    b.Property<string>("Location");
 
                     b.Property<bool>("LockoutEnabled");
 

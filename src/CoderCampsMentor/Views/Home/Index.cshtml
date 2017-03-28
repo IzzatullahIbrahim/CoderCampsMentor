@@ -3,35 +3,42 @@
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/css/profile.css" rel="stylesheet" />
-
+    <script src="~/ngApp/javaScript/messagePopup.js" type="text/javascript"></script>
     <title>CoderCampsMentor</title>
     <base href="/" />
 </head>
 <body ng-controller="AccountController as account">
     <div class="container">
-        <h1>CoderCampsMentor</h1>
-        <div>
-            <a href="/">Home</a> /
-            <a href="/about">About</a> /
-            <div ng-show="account.isLoggedIn()"><a href="/applicationUsers">List of Users</a> /</div>
-            <div ng-show="account.isLoggedIn()"><a href="/categories">List of Categories</a> /</div>
-            <div ng-show="account.isLoggedIn()"><a href="/addCategory">Add a Category</a> /</div>
-            <div ng-show="account.isLoggedIn()"><a href="/subCategories">List of Sub Categories</a> /</div>
-            <div ng-show="account.isLoggedIn()"><a href="/addSubCategory">Add a SubCategory</a> /</div>
-            <div ng-show="account.isLoggedIn()"><a ui-sref="profile">Profile</a> /</div>
+        <h1>CoderCamps Mentor</h1>
 
-            <a href="/secret">Secret</a> /
-            <a href="/login" ng-show="!account.isLoggedIn()">Login</a>
-            <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
-            <div ng-show="account.isLoggedIn()">
-                [{{account.getUserName()}}]
+        <div class="nav-content">
+
+                <a class="con" href="/">Home</a> /
+                <a class="con" href="/about">About</a> /
+                <div class="con" ng-show="account.isLoggedIn()"><a href="/applicationUsers">List of Users</a> /</div>
+                <div class="con" ng-show="account.isLoggedIn()"><a href="/categories">List of Categories</a> /</div>
+            <div class="con" ng-show="account.getClaim('IsAdmin')">
+                <div class="con" ng-show="account.isLoggedIn()"><a href="/addCategory">Add a Category</a> /</div>
             </div>
+                <div class="con" ng-show="account.isLoggedIn()"><a href="/subCategories">List of Sub Categories</a> /</div>
+            <div class="con" ng-show="account.getClaim('IsAdmin')"><div class="con" ng-show="account.isLoggedIn()"><a href="/addSubCategory">Add a SubCategory</a> /</div>
+            </div>
+                <div class="con" ng-show="account.isLoggedIn()"><a ui-sref="profile">Profile</a> /</div>
+                <div class="con" ng-show="account.isLoggedIn()"><a href="/code">Code</a> /</div>
+            <div class="con" ng-show="account.getClaim('IsAdmin')"><div ng-show="account.isLoggedIn()"><a class="con" href="/secret">Secret</a> /</div>
+            </div>
+                <a class="con" href="/login" ng-show="!account.isLoggedIn()">Login</a>
+                <a class="con" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
+        </div>
+        <div ng-show="account.isLoggedIn()">
+            [{{account.getUserName()}}]
         </div>
         <hr />
 
         <ui-view></ui-view>
 
-    </div>
+          
+</div>
     <!-- Library Files -->
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-resource/angular-resource.js"></script>

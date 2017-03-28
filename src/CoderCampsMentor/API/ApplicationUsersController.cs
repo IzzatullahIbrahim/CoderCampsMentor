@@ -34,8 +34,7 @@ namespace CoderCampsMentor.API
         [Authorize]
         public ApplicationUser GetSingleDetail(string id)
         {
-            return _auService.GetUser
-            (User.Identity.Name);
+            return _auService.GetUser(User.Identity.Name);
         }
         [HttpPost]
         [Authorize]

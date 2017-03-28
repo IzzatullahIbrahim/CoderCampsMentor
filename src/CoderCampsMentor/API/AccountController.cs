@@ -46,9 +46,6 @@ namespace CoderCampsMentor.Controllers
             var vm = new UserViewModel
             {
                 UserName = user.UserName,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Email = user.Email,
                 Claims = claims.ToDictionary(c => c.Type, c => c.Value)
             };
             return vm;
@@ -102,10 +99,14 @@ namespace CoderCampsMentor.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName,
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
                     Email = model.Email,
                     FirstName = model.FirstName,
-                    LastName = model.LastName };
+                    LastName = model.LastName,
+                    Location = model.Location,
+                };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -126,7 +127,6 @@ namespace CoderCampsMentor.Controllers
             // If we got this far, something failed
             return BadRequest(this.ModelState);
         }
-
 
 
         [HttpGet("checkAuthentication")]

@@ -25,7 +25,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="au in controller.subCategory.applicationUsers">
-                <td><img ng-src="{{au.picture}}" style="height:28px; width:28px" /></td>
+                <td><img class="dp" id="proPicBackground" ng-src="{{au.picture}}" style="height:28px; width:28px" /></td>
                 <td>
                     <a ui-sref="applicationUser({id: au.id})">{{au.firstName}}</a>
                 </td>
