@@ -7,20 +7,6 @@
         constructor(private $http: ng.IHttpService, private $stateParams: ng.ui.IStateParamsService) {
             this.$http.get('/api/applicationUsers').then((response) => {
                 this.appUsers = response.data;
-            })
-        }
-    }
-    export class EditApplicationUserController {
-        public user;
-        public editUser() {
-            this.$http.post(`/api/applicationUsers`, this.user).then((response) => {
-                this.$state.go(`home`);
-            });
-        }
-        constructor(private $stateParams: ng.ui.IStateParamsService, private $http: ng.IHttpService, private $state: ng.ui.IStateService) {
-            let userId = this.$stateParams[`id`];
-            this.$http.get(`/api/applicationUsers/` + userId).then((response) => {
-                this.user = response.data;
             });
         }
     }
@@ -30,15 +16,17 @@
         public userSubCategory;
         public user;
 
-        constructor(private $http: ng.IHttpService, private $stateParams: ng.ui.IStateParamsService, private profileService: CoderCampsMentor.Services.ProfileService, private accountService: CoderCampsMentor.Services.AccountService) {
-            let userId = this.$stateParams['id']; 
-            this.profileService.getUserById(this.accountService.isLoggedIn());
+        constructor(private $http: ng.IHttpService, private $stateParams: ng.ui.IStateParamsService) {
+            let userId = this.$stateParams['id'];
             this.$http.get('/api/userCategories/' + userId).then((response) => {
                 this.userCategory = response.data;
-            })
+            });
             this.$http.get('/api/userSubCategories/' + userId).then((response) => {
                 this.userSubCategory = response.data;
-            })
+            });
+            this.$http.get('/api/applicationUsers/' + userId).then((response) => {
+                this.user = response.data;
+            });
         }
     }
 
@@ -56,31 +44,31 @@
 
             this.$http.get('/api/userCategories/' + auId).then((response) => {
                 this.UserCategory = response.data;
-            })
+            });
 
             this.$http.get('/api/userSubCategories/' + auId).then((response) => {
                 this.UserSubCategory = response.data;
-            })
+            });
 
             this.$http.get('/api/categories').then((response) => {
                 this.categories = response.data;
-            })
+            });
 
             this.$http.get('/api/subCategories').then((response) => {
                 this.subCategories = response.data;
-            })
+            });
         }
 
         public addCategoryToUser() {
             this.$http.post('/api/userCategories', this.UserCategory).then((response) => {
                 this.$state.go('home');
-            })
+            });
         }
 
         public addSubCategoryToUser() {
             this.$http.post('/api/userSubCategories', this.UserSubCategory).then((response) => {
                 this.$state.go('home');
-            })
+            });
         }
     }
 
@@ -98,31 +86,31 @@
 
             this.$http.get('/api/userCategories/' + auId).then((response) => {
                 this.UserCategory = response.data;
-            })
+            });
 
             this.$http.get('/api/userSubCategories/' + auId).then((response) => {
                 this.UserSubCategory = response.data;
-            })
+            });
 
             this.$http.get('/api/categories').then((response) => {
                 this.categories = response.data;
-            })
+            });
 
             this.$http.get('/api/subCategories').then((response) => {
                 this.subCategories = response.data;
-            })
+            });
         }
 
         public editCategoryToUser() {
             this.$http.post('/api/userCategories', this.UserCategory).then((response) => {
                 this.$state.go('home');
-            })
+            });
         }
 
         public editSubCategoryToUser() {
             this.$http.post('/api/userSubCategories', this.UserSubCategory).then((response) => {
                 this.$state.go('home');
-            })
+            });
         }
     }
     export class MyProfileController {

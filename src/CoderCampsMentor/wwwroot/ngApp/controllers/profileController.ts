@@ -69,11 +69,8 @@
         }
         public editProfile() {
             this.profileService.saveProfile(this.user).then((data) => {
-                this.$state.go(`home`);
+                this.$state.go(`profile`);
             });
         }
-
-
     }
-
 }

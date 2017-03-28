@@ -4,19 +4,27 @@
 
     <div class="col-lg-8 col-lg-offset-2">
         <br />
-        <img ng-src="{{controller.userCategory.picture}}" style="height:128px; width:128px" id="proPicBackground" />
+        <img class="dp" ng-src="{{controller.userCategory.picture}}" style="height:128px; width:128px" id="proPicBackground" />
     </div>
+    <br />
+    <br />
+    <button class="btn btn-primary" id="footer-message">Message</button>
+    <br />
+    <br />
     <table class="table table-bordered">
         <thead>
             <tr>
                 <td>First Name</td>
                 <td>Last Name</td>
+                <td>Location</td>
             </tr>
+
         </thead>
         <tbody>
             <tr>
                 <td>{{controller.userCategory.firstName}}</td>
                 <td>{{controller.userCategory.lastName}}</td>
+                <td>{{controller.userCategory.location}}</td>
             </tr>
         </tbody>
     </table>

@@ -25,7 +25,8 @@ namespace CoderCampsMentor.Services
                                                   FirstName = au.FirstName,
                                                   LastName = au.LastName,
                                                   Picture = au.Picture,
-                                                  UserName = au.UserName
+                                                  UserName = au.UserName,
+                                                  Location = au.Location
                                               }).ToList();
             return appUsers;
         }
@@ -42,6 +43,7 @@ namespace CoderCampsMentor.Services
                                         ConcurrencyStamp = u.ConcurrencyStamp,
                                         Picture = u.Picture,
                                         UserName = u.UserName,
+                                        Location = u.Location
 
                                     }).FirstOrDefault();
             return user;

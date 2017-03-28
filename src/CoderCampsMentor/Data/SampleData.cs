@@ -19,14 +19,14 @@ namespace CoderCampsMentor.Data
             context.Database.EnsureCreated();
 
             // Ensure Stephen (IsAdmin)
-            var stephen = await userManager.FindByNameAsync("Stephen.Walther@CoderCamps.com");
+            var stephen = await userManager.FindByNameAsync("CoderCampsMentor@gmail.com");
             if (stephen == null)
             {
                 // create user
                 stephen = new ApplicationUser
                 {
-                    UserName = "Stephen.Walther@CoderCamps.com",
-                    Email = "Stephen.Walther@CoderCamps.com"
+                    UserName = "CoderCampsMentor@gmail.com",
+                    Email = "CoderCampsMentor@gmail.com"
                 };
                 await userManager.CreateAsync(stephen, "Secret123!");
 

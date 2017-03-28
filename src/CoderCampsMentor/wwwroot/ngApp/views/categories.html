@@ -2,7 +2,10 @@
     {{controller.message}}
 
     <br />
+    <br />
     <input placeholder="Search" ng-model="search" />
+    <br />
+    <br />
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -14,11 +17,11 @@
                 <td>
                     <a ui-sref="category({id: c.id})">{{c.categoryName}}</a>
                 </td>
-                <td>
+                <td ng-show="account.getClaim('IsAdmin')">
                     <a ui-sref="editCategory({id: c.id })">Edit Category</a>
                 </td>
-                <td>
-                    <button ng-click="controller.deleteCategory(c.id)">Delete Category</button>
+                <td ng-show="account.getClaim('IsAdmin')">
+                    <button ng-click="controller.deleteCategory(c.id)" class="btn btn-danger">Delete Category</button>
                 </td>
             </tr>
         </tbody>

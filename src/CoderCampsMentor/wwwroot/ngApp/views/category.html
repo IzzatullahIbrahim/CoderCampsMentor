@@ -38,16 +38,14 @@
             <tr>
                 <th>User pic</th>
                 <td>List of People who teach this (Programming/Music)</td>
-                <td>LastName</td>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="au in controller.category.applicationUsers">
-                <td><img ng-src="{{au.picture}}" style="height:28px; width:28px" /></td>
+                <td><img class="DP" ng-src="{{au.picture}}" style="height:28px; width:28px" id="proPicBackground"/></td>
                 <td>
-                    <a ui-sref="applicationUser({id: au.id})">{{au.firstName}}</a>
+                    <a ui-sref="applicationUser({id: au.id})">{{au.firstName}} {{au.lastName}}</a>
                 </td>
-                <td>{{au.lastName}}</td>
             </tr>
         </tbody>
     </table>
