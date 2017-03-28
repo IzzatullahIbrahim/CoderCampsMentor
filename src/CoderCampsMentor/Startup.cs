@@ -66,6 +66,7 @@ namespace CoderCampsMentor
             services.AddScoped<ISubCategoriesService, SubCategoriesService>();
             services.AddScoped<ICatSubCategoriesService, CatSubCategoriesService>();
             services.AddScoped<ISubCatCategoriesService, SubCatCategoriesService>();
+            services.AddScoped<ICommService, CommService>();
 
             // add security policies
             services.AddAuthorization(options =>
