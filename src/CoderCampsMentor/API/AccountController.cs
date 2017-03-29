@@ -46,6 +46,7 @@ namespace CoderCampsMentor.Controllers
             var vm = new UserViewModel
             {
                 UserName = user.UserName,
+                Id = user.Id,
                 Claims = claims.ToDictionary(c => c.Type, c => c.Value)
             };
             return vm;

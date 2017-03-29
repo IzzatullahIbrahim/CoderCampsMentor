@@ -84,7 +84,7 @@ namespace CoderCampsMentor {
             .state('profile', {
                 url: '/profile/:id',
                 templateUrl: '/ngApp/views/profile.html',
-                controller: CoderCampsMentor.Controllers.ApplicationUserController,
+                controller: CoderCampsMentor.Controllers.ProfilesController,
                 controllerAs: 'controller'
             })
             .state('editProfile', {

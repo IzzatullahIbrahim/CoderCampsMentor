@@ -7,6 +7,8 @@ namespace CoderCampsMentor.Services {
             // store user name
             this.$window.sessionStorage.setItem('userName', userInfo.userName);
 
+            this.$window.sessionStorage.setItem('userid', userInfo.id);
+
             // store claims
             this.$window.sessionStorage.setItem('claims', JSON.stringify(userInfo.claims));
         }
