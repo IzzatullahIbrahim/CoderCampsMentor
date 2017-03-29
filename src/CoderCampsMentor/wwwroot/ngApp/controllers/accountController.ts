@@ -2,6 +2,7 @@ namespace CoderCampsMentor.Controllers {
 
     export class AccountController {
         public externalLogins;
+        public userID;
 
         public getUserName() {
             return this.accountService.getUserName();
@@ -26,6 +27,7 @@ namespace CoderCampsMentor.Controllers {
 
         constructor(private accountService: CoderCampsMentor.Services.AccountService, private $location: ng.ILocationService) {
             this.getExternalLogins().then((results) => {
+                this.userID = sessionStorage.getItem("userid");
                 this.externalLogins = results;
             });
         }

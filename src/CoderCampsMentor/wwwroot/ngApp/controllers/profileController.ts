@@ -1,5 +1,24 @@
 ﻿namespace CoderCampsMentor.Controllers {
 
+    export class ProfilesController {
+        public message = 'Hello from profile page';
+        public userCategories;
+        public userSubCategories;
+
+        constructor(private $http: ng.IHttpService, private $stateParams: ng.ui.IStateParamsService) {
+            let pId = this.$stateParams['id'];
+            console.log(pId);
+
+            this.$http.get('/api/usercategories/' + pId).then((response) => {
+                this.userCategories = response.data;
+            })
+
+            this.$http.get('/api/usersubcategories/' + pId).then((response) => {
+                this.userSubCategories = response.data;
+            })
+        }
+    }
+
     export class ProfileController {
         public file;
         public user;

@@ -28,7 +28,7 @@
 
                 <a href="/addSubCategory" ng-show="account.getClaim('IsAdmin')">Add a SubCategory /</a>
 
-                <a ui-sref="profile" ng-show="account.isLoggedIn()">Profile /</a>
+                <a ui-sref="profile({id: account.userID})" ng-show="account.isLoggedIn()">Profile /</a>
 
                 <a href="/code" ng-show="account.isLoggedIn()">Code /</a>
 
@@ -48,7 +48,7 @@
 
             <ui-view></ui-view>
 
-            <div class="make-center">
+            @*<div class="make-center">
                 <input type="text" id="room-id" value="livingRoom" ng-show="account.isLoggedIn() && !account.isLoggedIn()">
 
                 <button id="enter-room">Enter Room</button>
@@ -68,7 +68,7 @@
             <div id="chat-container">
                 <div id="file-container"></div>
                 <div class="chat-output"></div>
-            </div>
+            </div>*@
         </div>
 
         <!-- Library Files -->
@@ -97,7 +97,7 @@
         <script src="~/ngApp/controllers/videoCallController.js"></script>
 
         <!-- Video Call script -->
-        <script src="~/ngApp/videoCall.js"></script>
+        @*<script src="~/ngApp/videoCall.js"></script>*@
 
         <!-- custom layout for HTML5 audio/video elements -->
         <script src="https://cdn.webrtc-experiment.com/getMediaElement.js"></script>
