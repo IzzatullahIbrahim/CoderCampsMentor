@@ -28,7 +28,7 @@
 
                 <a href="/addSubCategory" ng-show="account.getClaim('IsAdmin')">Add a SubCategory /</a>
 
-                <a ui-sref="profile({id: account.userID})" ng-show="account.isLoggedIn()">Profile /</a>
+                <a ui-sref="profile({id: account.getUserId()})" ng-show="account.isLoggedIn()">Profile /</a>
 
                 <a href="/code" ng-show="account.isLoggedIn()">Code /</a>
 
@@ -97,7 +97,7 @@
         <script src="~/ngApp/controllers/videoCallController.js"></script>
 
         <!-- Video Call script -->
-        @*<script src="~/ngApp/videoCall.js"></script>*@
+        <script src="~/ngApp/videoCall.js"></script>
 
         <!-- custom layout for HTML5 audio/video elements -->
         <script src="https://cdn.webrtc-experiment.com/getMediaElement.js"></script>
@@ -106,6 +106,5 @@
         <!-- Security -->
         <script src="/ngapp/controllers/accountcontroller.js"></script>
         <script src="/ngapp/services/accountservice.js"></script>
-
     </body>
 </html>
