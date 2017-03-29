@@ -8,6 +8,10 @@ namespace CoderCampsMentor.Controllers {
             return this.accountService.getUserName();
         }
 
+        public getUserId() {
+            return this.accountService.getUserId();
+        }
+
         public getClaim(type) {
             return this.accountService.getClaim(type);
         }
@@ -27,7 +31,6 @@ namespace CoderCampsMentor.Controllers {
 
         constructor(private accountService: CoderCampsMentor.Services.AccountService, private $location: ng.ILocationService) {
             this.getExternalLogins().then((results) => {
-                this.userID = sessionStorage.getItem("userid");
                 this.externalLogins = results;
             });
         }
