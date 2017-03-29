@@ -7,6 +7,7 @@ namespace CoderCampsMentor.Services {
             // store user name
             this.$window.sessionStorage.setItem('userName', userInfo.userName);
 
+            // strore user id
             this.$window.sessionStorage.setItem('userid', userInfo.id);
 
             // store claims
@@ -17,6 +18,9 @@ namespace CoderCampsMentor.Services {
             return this.$window.sessionStorage.getItem('userName');
         }
 
+        public getUserId() {
+            return this.$window.sessionStorage.getItem('userid');
+        }
 
         public getClaim(type) {
             var allClaims = JSON.parse(this.$window.sessionStorage.getItem('claims'));
@@ -59,8 +63,8 @@ namespace CoderCampsMentor.Services {
             return this.$http.post('/api/account/logout', null);
         }
 
-        public isLoggedIn() {
-            return this.$window.sessionStorage.getItem('userName');
+        public isLoggedIn() {                   
+            return this.$window.sessionStorage.getItem('userName'); 
         }
 
         // associate external login (e.g., Twitter) with local user account

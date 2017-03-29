@@ -3,9 +3,9 @@
     export class ProfilesController {
         public message = 'Hello from profile page';
         public userCategories;
-        public userSubCategories;
+        public userSubCategories;       
 
-        constructor(private $http: ng.IHttpService, private $stateParams: ng.ui.IStateParamsService) {
+        constructor(private $http: ng.IHttpService, private $state: ng.ui.IStateService, private $stateParams: ng.ui.IStateParamsService) {
             let pId = this.$stateParams['id'];
             console.log(pId);
 
