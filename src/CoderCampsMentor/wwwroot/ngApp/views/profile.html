@@ -2,11 +2,12 @@
 
 <div ng-show="account.isLoggedIn()">
     <br />
-    <a ui-sref="editProfile" class="btn btn-warning" ng-click="getCategory()"> Edit Profile</a>
+    <a ui-sref="editProfile({id: account.userID})" class="btn btn-warning" ng-click="getCategory()"> Edit Profile</a>
     <div class="col-lg-8 col-lg-offset-2">
         <br />
-        <img class="dp" ng-src="{{controller.userCategory.picture}}" style="height:128px; width:128px" id="proPicBackground" />
+        <img class="dp" ng-src="{{controller.userCategories.picture}}" style="height:128px; width:128px" id="proPicBackground" />
     </div>
+    <button class="btn btn-info">Add Skill</button>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -34,9 +35,7 @@
             <tr>
                 <td>
                     <ul>
-                        <li ng-repeat="cat in controller.userCategories.categories">
-                            <a ui-sref="category({id: cat.id})">{{cat.categoryName}}</a>
-                        </li>
+                        <li ng-repeat="cat in controller.userCategories.categories">{{cat.categoryName}}</li>
                     </ul>
                 </td>
             </tr>
@@ -53,12 +52,36 @@
             <tr>
                 <td>
                     <ul>
-                        <li ng-repeat="subCat in controller.userSubCategories.subCategories">
-                            <a ui-sref="subCategory({id: subCat.id})">{{subCat.subCategoryName}}</a>
-                        </li>
+                      <li ng-repeat="subCat in controller.userSubCategories.subCategories">{{subCat.subCategoryName}}<li>
                     </ul>
                 </td>
             </tr>
         </tbody>
     </table>
+    <form ng-submit="controller.addCategoryToUser(); controller.addSubCategoryToUser();">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>List of Categories</td>
+                    <td>List of Sub Categories</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{controller.UserCategory.firstName}}</td>
+                    <td>{{controller.UserCategory.lastName}}</td>
+                    <td>
+                        <select ng-model="controller.UserCategory.categories" ng-options="cat as cat.categoryName for cat in controller.categories" multiple></select>
+                    </td>
+                    <td>
+                        <select ng-model="controller.UserSubCategory.subCategories" ng-options="subCat as subCat.subCategoryName for subCat in controller.subCategories" multiple></select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button>Add Category And Sub Category</button>
+    </form>
 </div>
+

@@ -5,7 +5,7 @@
         public userCategories;
         public userSubCategories;
 
-        constructor(private $http: ng.IHttpService, private $stateParams: ng.ui.IStateParamsService) {
+        constructor(private $http: ng.IHttpService, private $state: ng.ui.IStateService, private $stateParams: ng.ui.IStateParamsService) {
             let pId = this.$stateParams['id'];
             console.log(pId);
 
@@ -97,7 +97,7 @@
 
         public editProfile() {
             this.profileService.saveProfile(this.user).then((data) => {
-                this.$state.go(`profile`);
+                this.$state.go('profile');
             });
         }
     }

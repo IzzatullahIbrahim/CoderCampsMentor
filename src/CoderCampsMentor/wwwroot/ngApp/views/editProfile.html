@@ -41,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="cat in controller.cat">
+            <tr ng-repeat="cat in controller.userCategories.categories">
                 <td><a ui-sref="category({id: cat.id})">{{cat.categoryName}}</a></td>
                 <td><button class="btn btn-danger">Delete</button></td>
             </tr>
@@ -55,7 +55,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="subCat in controller.userSubCategory.subCategories">
+            <tr ng-repeat="subCat in  controller.userSubCategories.subCategories">
                 <td><a ui-sref="subCategory({id: subCat.id})">{{subCat.subCategoryName}}</a></td>
                 <td><button class="btn btn-danger">Delete</button></td>
             </tr>
