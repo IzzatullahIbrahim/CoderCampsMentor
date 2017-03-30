@@ -1,22 +1,22 @@
 ﻿<div ng-show="account.isLoggedIn()">
+    <div class="container">
 
-    {{controller.message}}
-
-    <form ng-submit="controller.editSubCategory()">
-        <div>
-            <label>Sub Category Name</label>
-            <input type="text" ng-model="controller.subCategory.subCategoryName" />
-        </div>
-
-
-        <div>
-            <label>Pick A Category</label>
-            <select ng-model="controller.subCategory.category.id" ng-options="cat.id as cat.categoryName for cat in controller.categories">
-                <option value="" hidden>{{controller.subCategory.category.categoryName}}</option>
-            </select>
-        </div>
+        <form ng-submit="controller.editSubCategory()">
+            <div>
+                <label>Sub Category Name</label>
+                <input type="text" ng-model="controller.subCategory.subCategoryName" />
+            </div>
 
 
-        <button class="btn btn-success">Save</button>
-    </form>
+            <div>
+                <label>Pick A Category</label>
+                <select ng-model="controller.subCategory.category.id" ng-options="cat.id as cat.categoryName for cat in controller.categories">
+                    <option value="" hidden>{{controller.subCategory.category.categoryName}}</option>
+                </select>
+            </div>
+
+
+            <button class="btn btn-success">Save</button>
+        </form>
+    </div>
 </div>

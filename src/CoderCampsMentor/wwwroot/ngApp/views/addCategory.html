@@ -1,11 +1,13 @@
 ﻿<div ng-show="account.getClaim('IsAdmin')">
-    <div ng-show="account.isLoggedIn()">
-        {{controller.message}}
-        <form ng-submit="controller.addCategory();">
-            <label>Category Name: </label>
-            <input type="text" ng-model="controller.category.categoryName" />
+    <div class="container">
+        <div ng-show="account.isLoggedIn()">
+            {{controller.message}}
+            <form ng-submit="controller.addCategory();">
+                <label>Category Name: </label>
+                <input type="text" ng-model="controller.category.categoryName" />
 
-            <button>Add a Category</button>
-        </form>
+                <button>Add a Category</button>
+            </form>
+        </div>
     </div>
 </div>

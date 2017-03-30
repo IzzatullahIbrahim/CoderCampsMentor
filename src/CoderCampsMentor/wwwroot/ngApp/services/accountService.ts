@@ -10,6 +10,9 @@ namespace CoderCampsMentor.Services {
             // strore user id
             this.$window.sessionStorage.setItem('userid', userInfo.id);
 
+            //store user picture
+            this.$window.sessionStorage.setItem('userPicture', userInfo.picture);
+
             // store claims
             this.$window.sessionStorage.setItem('claims', JSON.stringify(userInfo.claims));
         }
@@ -21,7 +24,9 @@ namespace CoderCampsMentor.Services {
         public getUserId() {
             return this.$window.sessionStorage.getItem('userid');
         }
-
+        public getPicture() {
+            return this.$window.sessionStorage.getItem('userPicture');
+        }
         public getClaim(type) {
             var allClaims = JSON.parse(this.$window.sessionStorage.getItem('claims'));
             return allClaims ? allClaims[type] : null;

@@ -1,87 +1,64 @@
-﻿{{controller.message}}
-
+﻿
 <div ng-show="account.isLoggedIn()">
-    <br />
-    <a ui-sref="editProfile({id: account.userID})" class="btn btn-warning" ng-click="getCategory()"> Edit Profile</a>
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="container">
         <br />
-        <img class="dp" ng-src="{{controller.userCategories.picture}}" style="height:128px; width:128px" id="proPicBackground" />
-    </div>
-    <button class="btn btn-info">Add Skill</button>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Location</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{controller.userCategories.firstName}}</td>
-                <td>{{controller.userCategories.lastName}}</td>
-                <td>{{controller.userCategories.location}}</td>
-            </tr>
-        </tbody>
-    </table>
+        <a ui-sref="editProfile({id: account.userID})" class="btn btn-warning" ng-click="getCategory()"> Edit Profile</a>
+        <div class="col-lg-8 col-lg-offset-2">
+            <br />
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td>List of Category skills (Programming, music, data science, etc)</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <ul>
-                        <li ng-repeat="cat in controller.userCategories.categories">{{cat.categoryName}}</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td>List of Sub-Category skills (.Net, C#, Java, etc)</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <ul>
-                      <li ng-repeat="subCat in controller.userSubCategories.subCategories">{{subCat.subCategoryName}}<li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <form ng-submit="controller.addCategoryToUser(); controller.addSubCategoryToUser();">
+            <img class="dp" ng-src="{{controller.userCategories.picture}}" style="height:128px; width:128px" id="proPicBackground" align="right" />
+        </div>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <td>First Name</td>
                     <td>Last Name</td>
-                    <td>List of Categories</td>
-                    <td>List of Sub Categories</td>
+                    <td>Location</td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{{controller.UserCategory.firstName}}</td>
-                    <td>{{controller.UserCategory.lastName}}</td>
+                    <td>{{controller.userCategories.firstName}}</td>
+                    <td>{{controller.userCategories.lastName}}</td>
+                    <td>{{controller.userCategories.location}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>List of Category skills (Programming, music, data science, etc)</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                     <td>
-                        <select ng-model="controller.UserCategory.categories" ng-options="cat as cat.categoryName for cat in controller.categories" multiple></select>
-                    </td>
-                    <td>
-                        <select ng-model="controller.UserSubCategory.subCategories" ng-options="subCat as subCat.subCategoryName for subCat in controller.subCategories" multiple></select>
+                        <ul>
+                            <li ng-repeat="cat in controller.userCategories.categories">{{cat.categoryName}}</li>
+                        </ul>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <button>Add Category And Sub Category</button>
-    </form>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>List of Sub-Category skills (.Net, C#, Java, etc)</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li ng-repeat="subCat in controller.userSubCategories.subCategories">{{subCat.subCategoryName}}
+                            <li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 

@@ -1,64 +1,69 @@
 ﻿<div ng-show="account.isLoggedIn()">
-    <div>
-        <p>Current Picture</p>
-        <img class="dp" ng-src="{{controller.user.picture}}" style="height:128px; width:128px" id="proPicBackground" />
-    </div>
-    <h6>{{controller.file.filename}}</h6>
-    <div>
-        <fieldset>
-            <form ng-submit="controller.saveProfile()">
+    <div class="container">
+        <div>
+            <img class="dp" ng-src="{{controller.user.picture}}" style="height:128px; width:128px" id="proPicBackground" align="right" />
+        </div>
+        <div>
+                <form ng-submit="controller.saveProfile()">
+                    <div>
+                        <button type="button" ng-click="controller.pickFile()" class="btn btn-primary">Upload Image</button>
+                        <img ng-src="{{controller.file.url | fpConvert:{w: 100} }}" alt="{{controller.file.title}}" />
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </form>
+            <button ng-click="controller.defaultPic()" class="btn btn-warning">Default pic</button>
+        </div>
+        <div>
+                <form ng-submit="controller.editProfile()" class="form form-group">
+                    <label>First Name</label>
+                    <input type="text" ng-model="controller.user.firstName" />
+                    <label>Last Name</label>
+                    <input type="text" ng-model="controller.user.lastName" />
 
-                <div>
-                    <button type="button" ng-click="controller.pickFile()" class="btn btn-primary">Upload Image</button>
-                    <img ng-src="{{controller.file.url | fpConvert:{w: 100} }}" alt="{{controller.file.title}}" />
-                    <br />
-                    <br />
+                    <div>
+                        <label>Location:</label>
+                        <select ng-model="controller.user.location">
+                            <option value="Seattle, WA">Seattle, WA</option>
+                            <option value="Phoenix, AZ">Phoenix, AZ</option>
+                            <option value="Houston, TX">Houston, TX</option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-success">Save</button>
-                    <br />
+                </form>
+        </div>
+        <form class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>List of Category skills (Programming, music, data science, etc)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="cat in controller.userCategories.categories">
+                            <td class="form-control"><a ui-sref="category({id: cat.id})">{{cat.categoryName}}</a></td>
+                            <td class="form-control"><button class="btn btn-danger">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
                 </div>
             </form>
-        </fieldset>
-        <button ng-click="controller.defaultPic()" class="btn btn-warning">Default pic</button>
+        <form class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>List of Sub-Category skills (.Net, C#, Java, etc)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="subCat in  controller.userSubCategories.subCategories">
+                            <td><a ui-sref="subCategory({id: subCat.id})">{{subCat.subCategoryName}}</a></td>
+                            <td><button class="btn btn-danger">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+        </div>
     </div>
-    <div>
-        <fieldset>
-            <form ng-submit="controller.editProfile()" class="form form-control">
-                <label class="form-group-sm">First Name</label>
-                <input type="text" ng-model="controller.user.firstName" />
-                <label>Last Name</label>
-                <input type="text" ng-model="controller.user.lastName" />
-
-                <label>Location</label>
-                <input type="text" ng-model="controller.user.location" />
-                <button type="submit" class="btn btn-success">Save</button>
-            </form>
-        </fieldset>
-    </div>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>List of Category skills (Programming, music, data science, etc)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="cat in controller.userCategories.categories">
-                <td><a ui-sref="category({id: cat.id})">{{cat.categoryName}}</a></td>
-                <td><button class="btn btn-danger">Delete</button></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>List of Sub-Category skills (.Net, C#, Java, etc)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="subCat in  controller.userSubCategories.subCategories">
-                <td><a ui-sref="subCategory({id: subCat.id})">{{subCat.subCategoryName}}</a></td>
-                <td><button class="btn btn-danger">Delete</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>

@@ -3,6 +3,12 @@ namespace CoderCampsMentor.Controllers {
     export class AccountController {
         public externalLogins;
         public userID;
+        public userPicture;
+
+
+        public getPicture() {
+            return this.accountService.getPicture();
+        }
 
         public getUserName() {
             return this.accountService.getUserName();
@@ -60,8 +66,10 @@ namespace CoderCampsMentor.Controllers {
         public validationMessages;
 
         public register() {
+            
+            this.accountService.getPicture();
             this.accountService.register(this.registerUser).then(() => {
-                this.$location.path('/selectPicture');
+                this.$location.path('/');
             }).catch((results) => {
                 this.validationMessages = results;
             });

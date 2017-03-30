@@ -123,12 +123,6 @@ namespace CoderCampsMentor {
                 controller: CoderCampsMentor.Controllers.AboutController,
                 controllerAs: 'controller'
             })
-            .state('selectPicture', {
-                url: '/selectPicture',
-                templateUrl: '/ngApp/views/selectPicture.html',
-                controller: CoderCampsMentor.Controllers.ProfileController,
-                controllerAs: 'controller'
-            })
             .state('code', {
                 url: '/code',
                 templateUrl: '/ngApp/views/code.html',
