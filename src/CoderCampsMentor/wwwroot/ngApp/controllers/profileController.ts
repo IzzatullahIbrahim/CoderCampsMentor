@@ -3,7 +3,8 @@
     export class ProfilesController {
         public message = 'Hello from profile page';
         public userCategories;
-        public userSubCategories;       
+        public userSubCategories;
+
 
         constructor(private $http: ng.IHttpService, private $state: ng.ui.IStateService, private $stateParams: ng.ui.IStateParamsService) {
             let pId = this.$stateParams['id'];
@@ -11,21 +12,24 @@
 
             this.$http.get('/api/usercategories/' + pId).then((response) => {
                 this.userCategories = response.data;
-            })
+            });
 
             this.$http.get('/api/usersubcategories/' + pId).then((response) => {
                 this.userSubCategories = response.data;
-            })
+            });
         }
     }
-
     export class ProfileController {
         public file;
         public user;
-
+        public categories;
+        public subCategories;
+        public UserCategory;
+        public UserSubCategory;
         constructor(private profileService: CoderCampsMentor.Services.ProfileService, private filepickerService, private $scope: ng.IScope, private $state: ng.ui.IStateService, private accountService: CoderCampsMentor.Services.AccountService, private $http: ng.IHttpService) {
 
             this.getUserById();
+            this.getCategoriesAndSubCategories();
         }
 
         private getUserById() {
@@ -95,9 +99,29 @@
                 })
         }
 
+        public getCategoriesAndSubCategories() {
+                    this.$http.get('/api/categories').then((response) => {
+                this.categories = response.data;
+            });
+
+            this.$http.get('/api/subCategories').then((response) => {
+                this.subCategories = response.data;
+            });
+        }
         public editProfile() {
             this.profileService.saveProfile(this.user).then((data) => {
-                this.$state.go(`profile`);
+                this.$state.go('profile');
+            });
+        }
+        public addCategoryToUser() {
+            this.$http.post('/api/userCategories', this.UserCategory).then((response) => {
+                this.$state.go('home');
+            });
+
+        }
+        public addSubCategoryToUser() {
+            this.$http.post('/api/userSubCategories', this.UserSubCategory).then((response) => {
+                this.$state.go('home');
             });
         }
     }

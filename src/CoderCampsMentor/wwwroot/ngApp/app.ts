@@ -88,7 +88,7 @@ namespace CoderCampsMentor {
                 controllerAs: 'controller'
             })
             .state('editProfile', {
-                url: '/editProfile',
+                url: '/editProfile/:id',
                 templateUrl: '/ngApp/views/editProfile.html',
                 controller: CoderCampsMentor.Controllers.ProfileController,
                 controllerAs: 'controller'
@@ -121,12 +121,6 @@ namespace CoderCampsMentor {
                 url: '/about',
                 templateUrl: '/ngApp/views/about.html',
                 controller: CoderCampsMentor.Controllers.AboutController,
-                controllerAs: 'controller'
-            })
-            .state('selectPicture', {
-                url: '/selectPicture',
-                templateUrl: '/ngApp/views/selectPicture.html',
-                controller: CoderCampsMentor.Controllers.ProfileController,
                 controllerAs: 'controller'
             })
             .state('code', {

@@ -47,6 +47,7 @@ namespace CoderCampsMentor.Controllers
             {
                 UserName = user.UserName,
                 Id = user.Id,
+                Picture = user.Picture,
                 Claims = claims.ToDictionary(c => c.Type, c => c.Value)
             };
             return vm;
@@ -107,6 +108,7 @@ namespace CoderCampsMentor.Controllers
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     Location = model.Location,
+                    Picture = model.Picture,
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

@@ -1,64 +1,64 @@
-﻿{{controller.message}}
-
+﻿
 <div ng-show="account.isLoggedIn()">
-    <br />
-    <a ui-sref="editProfile" class="btn btn-warning" ng-click="getCategory()"> Edit Profile</a>
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="container">
         <br />
-        <img class="dp" ng-src="{{controller.userCategory.picture}}" style="height:128px; width:128px" id="proPicBackground" />
+        <a ui-sref="editProfile({id: account.userID})" class="btn btn-warning" ng-click="getCategory()"> Edit Profile</a>
+        <div class="col-lg-8 col-lg-offset-2">
+            <br />
+
+            <img class="dp" ng-src="{{controller.userCategories.picture}}" style="height:128px; width:128px" id="proPicBackground" align="right" />
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Location</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{controller.userCategories.firstName}}</td>
+                    <td>{{controller.userCategories.lastName}}</td>
+                    <td>{{controller.userCategories.location}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>List of Category skills (Programming, music, data science, etc)</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li ng-repeat="cat in controller.userCategories.categories">{{cat.categoryName}}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>List of Sub-Category skills (.Net, C#, Java, etc)</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li ng-repeat="subCat in controller.userSubCategories.subCategories">{{subCat.subCategoryName}}
+                            <li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Location</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{controller.userCategories.firstName}}</td>
-                <td>{{controller.userCategories.lastName}}</td>
-                <td>{{controller.userCategories.location}}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td>List of Category skills (Programming, music, data science, etc)</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <ul>
-                        <li ng-repeat="cat in controller.userCategories.categories">
-                            <a ui-sref="category({id: cat.id})">{{cat.categoryName}}</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td>List of Sub-Category skills (.Net, C#, Java, etc)</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <ul>
-                        <li ng-repeat="subCat in controller.userSubCategories.subCategories">
-                            <a ui-sref="subCategory({id: subCat.id})">{{subCat.subCategoryName}}</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
+

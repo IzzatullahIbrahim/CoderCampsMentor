@@ -1,19 +1,21 @@
 ﻿<div ng-show="account.getClaim('IsAdmin')">
-    <div ng-show="account.isLoggedIn()">
-        {{controller.message}}
+    <div class="container">
+        <div ng-show="account.isLoggedIn()">
+            {{controller.message}}
 
-        <form ng-submit="controller.addSubCategory()">
-            <div>
-                <label>Pick A Category</label>
-                <select ng-model="controller.subCategory.category.id" ng-options="cat.id as cat.categoryName for cat in controller.categories"></select>
-            </div>
+            <form ng-submit="controller.addSubCategory()">
+                <div>
+                    <label>Pick A Category</label>
+                    <select ng-model="controller.subCategory.category.id" ng-options="cat.id as cat.categoryName for cat in controller.categories"></select>
+                </div>
 
-            <div>
-                <label>Sub Category Name</label>
-                <input type="text" ng-model="controller.subCategory.subCategoryName" />
-            </div>
+                <div>
+                    <label>Sub Category Name</label>
+                    <input type="text" ng-model="controller.subCategory.subCategoryName" />
+                </div>
 
-            <button>Add Sub Category</button>
-        </form>
+                <button>Add Sub Category</button>
+            </form>
+        </div>
     </div>
 </div>

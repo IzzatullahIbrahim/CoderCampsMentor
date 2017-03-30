@@ -1,8 +1,7 @@
 ﻿namespace CoderCampsMentor.Services {
     export class ProfileService {
         private usersResource;
-        private userCategoryResource;
-        private userSubCategoryResource;
+        private picResource;
         constructor(private $resource: angular.resource.IResourceService, ) {
             this.usersResource = this.$resource('/api/applicationUsers/:id');
         }

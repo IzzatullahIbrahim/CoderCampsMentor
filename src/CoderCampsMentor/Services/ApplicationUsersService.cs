@@ -62,6 +62,7 @@ namespace CoderCampsMentor.Services
             input.LastName = user.LastName;
             input.PhoneNumber = user.PhoneNumber;
             input.UserName = user.UserName;
+            input.Location = user.Location;
             _repo.SaveChanges();
         }
     }

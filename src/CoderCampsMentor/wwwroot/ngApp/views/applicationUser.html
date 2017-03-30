@@ -1,69 +1,80 @@
 ﻿<div ng-show="account.isLoggedIn()">
-    {{controller.message}}
-    <br />
-
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="container">
         <br />
-        <img class="dp" ng-src="{{controller.userCategory.picture}}" style="height:128px; width:128px" id="proPicBackground" />
+
+        <div>
+            <br />
+            <div id="uImgae">
+                <img class="dp" ng-src="{{controller.userCategory.picture}}" style="height:128px; width:128px" id="proPicBackground" align="right" />
+            </div>
+        </div>
+
+        <!--<button class="btn btn-primary" id="footer-message">Message</button>-->
+
+        <form class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>First Name</td>
+                            <td>Last Name</td>
+                            <td>Location</td>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{controller.userCategory.firstName}}</td>
+                            <td>{{controller.userCategory.lastName}}</td>
+                            <td>{{controller.userCategory.location}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>List of Category skills (Programming, music, data science, etc)</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li ng-repeat="cat in controller.userCategory.categories">
+                                        <a ui-sref="category({id: cat.id})">{{cat.categoryName}}</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>List of Sub-Category skills (.Net, C#, Java, etc)</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li ng-repeat="subCat in controller.userSubCategory.subCategories">
+                                    <a ui-sref="subCategory({id: subCat.id})">{{subCat.subCategoryName}}</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </form>
     </div>
-    <br />
-    <br />
-    <button class="btn btn-primary" id="footer-message">Message</button>
-    <br />
-    <br />
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Location</td>
-            </tr>
-
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{controller.userCategory.firstName}}</td>
-                <td>{{controller.userCategory.lastName}}</td>
-                <td>{{controller.userCategory.location}}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td>List of Category skills (Programming, music, data science, etc)</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <ul>
-                        <li ng-repeat="cat in controller.userCategory.categories">
-                            <a ui-sref="category({id: cat.id})">{{cat.categoryName}}</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <td>List of Sub-Category skills (.Net, C#, Java, etc)</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <ul>
-                        <li ng-repeat="subCat in controller.userSubCategory.subCategories">
-                            <a ui-sref="subCategory({id: subCat.id})">{{subCat.subCategoryName}}</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
