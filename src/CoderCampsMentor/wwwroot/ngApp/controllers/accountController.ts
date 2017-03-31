@@ -5,7 +5,6 @@ namespace CoderCampsMentor.Controllers {
         public userID;
         public userPicture;
 
-
         public getPicture() {
             return this.accountService.getPicture();
         }
@@ -43,7 +42,6 @@ namespace CoderCampsMentor.Controllers {
     }
 
     angular.module('CoderCampsMentor').controller('AccountController', AccountController);
-
 
     export class LoginController {
         public loginUser;
@@ -97,7 +95,6 @@ namespace CoderCampsMentor.Controllers {
         }
 
         constructor(private accountService: CoderCampsMentor.Services.AccountService, private $location: ng.ILocationService) {}
-
     }
 
     export class ConfirmEmailController {
@@ -119,5 +116,4 @@ namespace CoderCampsMentor.Controllers {
                 });
         }
     }
-
 }
