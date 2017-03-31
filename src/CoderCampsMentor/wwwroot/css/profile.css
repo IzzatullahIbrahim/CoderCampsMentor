@@ -21,17 +21,25 @@ ul{
 }
 #scatter {
 margin-top:10%;
+color:black;
+}
+#li-text{
+    color:black;
+     background:grey;
+     font-family: FontAwesome;
+}
+a, a:hover{
+    text-decoration: none;
 }
 #scat{
         font-size: 100%;
-        font-family: FontAwesome;
+
     display: inline-block;
     vertical-align: top; 
-
     margin-right:  calc((20px / 3) - 5px);
     margin-bottom: 5px;
-
     height: 100px;
+   
     width: calc(25% - 5px); 
 }
 /*search bar*/

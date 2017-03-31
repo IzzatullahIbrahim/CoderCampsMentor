@@ -17,7 +17,7 @@
             </div>
         </div>
         <ul id="scatter">
-            <li ng-repeat="sc in controller.subCategories|filter:{subCategoryName: search}" class="item" id="scat"><a ui-sref="subCategory({id: sc.id})" class="well well-lg">{{sc.subCategoryName}}</a></li>
+            <li ng-repeat="sc in controller.subCategories|filter:{subCategoryName: search}" class="item" id="scat"><a id="li-text" ui-sref="subCategory({id: sc.id})" class="well well-lg">{{sc.subCategoryName}}</a></li>
             <li ng-show="account.getClaim('IsAdmin')"><a ui-sref="editSubCategory({id: sc.id})">Edit SubCategory</a></li>
             <li ng-show="account.getClaim('IsAdmin')"><button ng-click="controller.deleteSubCategory(sc.id)" class="btn btn-danger">Delete SubCategory</button></li>
         </ul>
