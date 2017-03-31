@@ -99,18 +99,6 @@ namespace CoderCampsMentor {
                 controller: CoderCampsMentor.Controllers.SecretController,
                 controllerAs: 'controller'
             })
-            .state('login', {
-                url: '/login',
-                templateUrl: '/ngApp/views/login.html',
-                controller: CoderCampsMentor.Controllers.LoginController,
-                controllerAs: 'controller'
-            })
-            .state('register', {
-                url: '/register',
-                templateUrl: '/ngApp/views/register.html',
-                controller: CoderCampsMentor.Controllers.RegisterController,
-                controllerAs: 'controller'
-            })
             .state('externalRegister', {
                 url: '/externalRegister',
                 templateUrl: '/ngApp/views/externalRegister.html',

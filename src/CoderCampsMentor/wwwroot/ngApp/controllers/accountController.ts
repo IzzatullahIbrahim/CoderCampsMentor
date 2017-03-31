@@ -50,8 +50,10 @@ namespace CoderCampsMentor.Controllers {
         public validationMessages;
 
         public login() {
+            console.log('a');
             this.accountService.login(this.loginUser).then(() => {
                 this.$location.path('/');
+                location.reload();
             }).catch((results) => {
                 this.validationMessages = results;
             });
@@ -60,16 +62,17 @@ namespace CoderCampsMentor.Controllers {
         constructor(private accountService: CoderCampsMentor.Services.AccountService, private $location: ng.ILocationService) { }
     }
 
+    angular.module('CoderCampsMentor').controller('LoginController', LoginController);
 
     export class RegisterController {
         public registerUser;
         public validationMessages;
 
         public register() {
-            
             this.accountService.getPicture();
             this.accountService.register(this.registerUser).then(() => {
                 this.$location.path('/');
+                location.reload();
             }).catch((results) => {
                 this.validationMessages = results;
             });
@@ -78,9 +81,7 @@ namespace CoderCampsMentor.Controllers {
         constructor(private accountService: CoderCampsMentor.Services.AccountService, private $location: ng.ILocationService) { }
     }
 
-
-
-
+    angular.module('CoderCampsMentor').controller('RegisterController', RegisterController);
 
     export class ExternalRegisterController {
         public registerUser;

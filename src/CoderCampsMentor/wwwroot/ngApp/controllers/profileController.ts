@@ -19,6 +19,7 @@
             });
         }
     }
+
     export class ProfileController {
         public file;
         public user;

@@ -6,7 +6,10 @@
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/css/sidebar.css" rel="stylesheet" />
     <link href="~/css/profile.css" rel="stylesheet" />
-    <script src="~/ngApp/javaScript/messagePopup.js" type="text/javascript"></script>
+    <link href="~/css/Login.css" rel="stylesheet" />
+    @*<script src="~/ngApp/javaScript/messagePopup.js" type="text/javascript"></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
     <title>CoderCampsMentor</title>
@@ -62,54 +65,157 @@
                 <li><a href="/login" ng-show="!account.isLoggedIn()">Login</a></li>
             </ul>
         </div>
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
+        <div id="page-content-wrapper" >
+            <div class="container-fluid" >
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 test">
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                     </div>
-                        <ui-view></ui-view>
+
+                    <!-- Start of login and register page-->
+                    <div class="container login-register">
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#login-Modal">
+                            <span class="glyphicon glyphicon-user"></span> Login
+                        </button>
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#register-Modal">
+                            <span class="glyphicon glyphicon-education"></span>Register
+                        </button>
+
+                        <!-- Login Modal -->
+                        <div class="modal fade" id="login-Modal" role="dialog" ng-controller="LoginController as controller">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header" align="center">
+                                        <img class="img-circle" id="img_logo" src="~/images/codercampslogo.png" />
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+
+                                    <form ng-submit="controller.login()">
+                                        <div class="modal-body">
+                                            <div id="div-msg">
+                                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                                <span id="text-login-msg">Type your username and password.</span>
+                                            </div>
+                                            <input class="form-control" type="text" placeholder="Username" ng-model="controller.loginUser.email" required>
+                                            <input class="form-control" type="password" placeholder="Password" ng-model="controller.loginUser.password" required>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Remember me
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div>
+                                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#lost-password-Modal" data-dismiss="modal" aria-label="Close">Lost Password?</button>
+                                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#register-Modal" data-dismiss="modal" aria-label="Close">Register</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lost Password Modal -->
+                        <div class="modal fade" id="lost-password-Modal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header" align="center">
+                                        <img class="img-circle" id="img_logo" src="~/images/codercampslogo.png" />
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+
+                                    <form>
+                                        <div class="modal-body">
+                                            <div id="div-msg">
+                                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                                <span id="text-lost-msg">Type your e-mail.</span>
+                                            </div>
+                                            <input class="form-control" type="text" placeholder="E-Mail" required>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div>
+                                                <button type="submit" class="btn btn-primary btn-lg btn-block" data-dismiss="modal" aria-label="Close">Send</button>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#login-Modal" data-dismiss="modal" aria-label="Close">Log In</button>
+                                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#register-Modal" data-dismiss="modal" aria-label="Close">Register</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Register Modal -->
+                        <div class="modal fade" id="register-Modal" role="dialog" ng-controller="RegisterController as controller">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header" align="center">
+                                        <img class="img-circle" id="img_logo" src="~/images/codercampslogo.png" />
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+
+                                    <form ng-submit="controller.register()">
+                                        <div class="modal-body">
+                                            <div id="div-msg">
+                                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                                <span id="text-register-msg">Register an account.</span>
+                                            </div>
+                                            <input class="form-control margin-top" type="email" placeholder="E-Mail" ng-model="controller.registerUser.email" required>
+                                            <input class="form-control margin-top" type="text" placeholder="First Name" ng-model="controller.registerUser.firstName" required>
+                                            <input class="form-control margin-top" type="text" placeholder="Last Name" ng-model="controller.registerUser.lastName" required>
+                                            <input class="form-control" type="password" placeholder="Password" ng-model="controller.registerUser.password" required>
+                                            <input class="form-control" type="password" placeholder="Confirm Password" ng-model="controller.registerUser.confirmPassword" required>
+                                            <div>
+                                                <select class="form-control margin-top" ng-model="controller.registerUser.location">
+                                                    <option value="" disabled selected hidden>Location</option>
+                                                    <option value="Seattle, WA">Seattle, WA</option>
+                                                    <option value="Phoenix, AZ">Phoenix, AZ</option>
+                                                    <option value="Houston, TX">Houston, TX</option>
+                                                </select>
+                                            </div>
+                                            <div hidden>
+                                                <select ng-model="controller.registerUser.picture" ng-init="controller.registerUser.picture='/images/avatar.jpg'">
+                                                    <option selected="selected" value="/images/avatar.jpg">/images/avatar.jpg</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div>
+                                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                                            </div>
+                                            <div>
+                                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#login-Modal" data-dismiss="modal" aria-label="Close">Log In</button>
+                                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#lost-password-Modal" data-dismiss="modal" aria-label="Close">Lost Password?</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of login and register-->
+                    <ui-view></ui-view>
                 </div>
             </div>
         </div>
     </div>
-    @*<div>
-
-        </div>*@
-
-
-
-
-
-
-
-
-
-    @*<div class="make-center">
-            <input type="text" id="room-id" value="livingRoom" ng-show="account.isLoggedIn() && !account.isLoggedIn()">
-
-            <button id="enter-room">Enter Room</button>
-
-            <br><br>
-            <input type="text" id="input-text-chat" placeholder="Enter Text Chat" disabled>
-            <button id="share-file" disabled>Share File</button>
-
-            <br><br>
-            <button id="disconnect" disabled>Disconnect</button>
-
-            <div id="room-urls"></div>
-        </div>
-
-        <div id="videos-container1"></div>
-
-        <div id="chat-container">
-            <div id="file-container"></div>
-            <div class="chat-output"></div>
-        </div>*@
-
-
-
-
 
     <!-- Library Files -->
     <script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
@@ -120,8 +226,6 @@
     <script src="/bower_components/angular-touch/angular-touch.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-
-
 
     <!--File Picker-->
     <script src="~/bower_components/angular-filepicker/dist/angular_filepicker.min.js"></script>
@@ -136,10 +240,13 @@
     <script src="~/ngApp/controllers/applicationUsersController.js"></script>
     <script src="~/ngApp/controllers/categoriesController.js"></script>
     <script src="~/ngApp/controllers/subCategoriesController.js"></script>
-    <script src="~/ngApp/controllers/videoCallController.js"></script>
+    <script src="~/ngapp/controllers/videocallcontroller.js"></script>
 
     <!-- Video Call script -->
-    <script src="~/ngApp/videoCall.js"></script>
+    @*<script src="~/ngApp/videoCall.js"></script>*@
+
+    <!-- Navbar script -->
+    <script src="~/lib/Navbar.js"></script>
 
     <!-- custom layout for HTML5 audio/video elements -->
     <script src="https://cdn.webrtc-experiment.com/getMediaElement.js"></script>
@@ -152,11 +259,5 @@
 
     <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
 
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
 </body>
 </html>
