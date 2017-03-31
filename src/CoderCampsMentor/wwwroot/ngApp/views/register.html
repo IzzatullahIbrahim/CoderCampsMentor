@@ -33,6 +33,8 @@
                 <label>Password:</label>
                 <input ng-model="controller.registerUser.password" />
             </div>
+            <div hidden> <select ng-model="controller.registerUser.picture" ng-init="controller.registerUser.picture='/images/avatar.jpg'">
+                <option selected="selected" value="/images/avatar.jpg">/images/avatar.jpg</option></select> </div>
             <div>
                 <label>Confirm Password:</label>
                 <input ng-model="controller.registerUser.confirmPassword" />

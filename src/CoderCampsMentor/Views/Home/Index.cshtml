@@ -22,7 +22,7 @@
 
             <ul class="sidebar-nav">
 
-                <li><a ui-sref="profile({id: account.getUserId()})" ng-show="account.isLoggedIn()"><img class="dp" ng-src="{{account.getPicture()}}" style="height:40px; width:40px" id="proPicBackground" /></a></li>
+                <li class="dp"><a ui-sref="profile({id: account.getUserId()})" ng-show="account.isLoggedIn()"><img class="dp" ng-src="{{account.getPicture()}}" style="height:40px; width:40px" id="proPicBackground" /></a></li>
                 <li ng-show="account.isLoggedIn()">
                     {{account.getUserName()}}
                 </li>

@@ -18,6 +18,7 @@ namespace CoderCampsMentor.ViewModels.Account
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Location { get; set; }
+        public string Picture { get; set; }
 
 
         [Required]
