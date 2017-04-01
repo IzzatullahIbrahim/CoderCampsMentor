@@ -16,7 +16,7 @@
             </div>
         </div>
         <ul id="scatter">
-            <li ng-repeat="c in controller.categories|filter:{categoryName: search}" class="item"><a ui-sref="category({id: c.id})" class="well well-lg" id="scat">{{c.categoryName}}</a></li>
+            <li ng-repeat="c in controller.categories|filter:{categoryName: search}" class="item" id="scat"><a ui-sref="category({id: c.id})" class="well well-lg" id="li-text">{{c.categoryName}}</a></li>
             <li ng-show="account.getClaim('IsAdmin')"><a ui-sref="editCategory({id: c.id })"></a></li>
             <li ng-show="account.getClaim('IsAdmin')"><button ng-click="controller.deleteCategory(c.id)" class="btn btn-danger">Delete Category</button></li>
         </ul>
