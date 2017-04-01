@@ -26,7 +26,8 @@ namespace CoderCampsMentor.Services
                                                   LastName = au.LastName,
                                                   Picture = au.Picture,
                                                   UserName = au.UserName,
-                                                  Location = au.Location
+                                                  Location = au.Location,
+                                                  Email = au.Email
                                               }).ToList();
             return appUsers;
         }
