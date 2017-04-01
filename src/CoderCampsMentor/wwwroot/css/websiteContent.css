@@ -1,0 +1,12 @@
+﻿body{
+    background-color: dimgray;
+    padding-bottom: 20px;
+}
+
+.website-content{
+    margin-top:110px;
+    background-color:white;
+    padding-bottom: 8px;
+    min-height: 75.5%;
+    margin-bottom: -20px;
+}
