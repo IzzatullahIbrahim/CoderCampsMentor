@@ -1,4 +1,58 @@
-﻿<div ng-show="account.isLoggedIn()">
+﻿<div class="listofUsers">
+    <div class="card kl-card kl-xl kl-spin kl-reveal kl-fade kl-overlay kl-show kl-slide-in kl-shine">
+
+        <div class="kl-card-block kl-md bg-white kl-shadow-br addMore">
+            <a href="#" class="kl-card-avatar kl-md kl-pl kl-plo"><img class="kl-b-danger kl-b-circle kl-b-3 kl-reveal kl-spin kl-fast kl-shadow-br kl-shine" src="http://lorempixel.com/100/100/people"></a>
+        </div>
+
+        <div class="kl-card-block kl-md bg-primary kl-shadow-br kl-overlay">
+            <div class="kl-background">
+                <img src="../../images/codercampslogo.png">
+            </div>
+            <div class="kl-card-overlay kl-card-overlay-split-v-4 kl-dark kl-inverse kl-top-in">
+                <div class="kl-card-overlay-item"></div>
+                <div class="kl-card-overlay-item">
+                    <div class="kl-figure-block">
+                        <span class="kl-figure kl-txt-shadow">First Name</span>
+                    </div>
+                </div>
+                <div class="kl-card-overlay-item">
+                    <div class="kl-figure-block">
+                        <span class="kl-figure kl-txt-shadow">Last Name</span>
+                    </div>
+                </div>
+                <div class="kl-card-overlay-item"></div>
+            </div>
+            <div class="kl-card-item kl-pbl kl-show text-primary kl-txt-shadow">
+                <div class="kl-figure-block">
+                    <span class="kl-figure">109</span>
+                    <span class="kl-title text-primary">Following</span>
+                </div>
+            </div>
+            <div class="kl-card-item kl-pbr kl-show text-primary kl-txt-shadow">
+                <div class="kl-figure-block">
+                    <span class="kl-figure">26k</span>
+                    <span class="kl-title text-primary">Followers</span>
+                </div>
+            </div>
+            <div class="kl-card-item kl-pm kl-show text-white kl-txt-shadow text-center">
+                <h3 class="mb-0">Joe Bloggs</h3>
+                <div class="text-white small">@joebloggs</div>
+            </div>
+
+            <div class="kl-card-item kl-ptr kl-card-social kl-show">
+                <!--<a href="#"><img class="kl-b-2 kl-shine kl-spin" </a>
+                <a href="#"><img class="kl-b-2 kl-shine kl-spin" </a>
+                <a href="#"><img class="kl-b-2 kl-shine kl-spin" </a>-->
+            </div>
+            <div class="kl-card-item kl-pb kl-show text-center kl-w50">
+                <span class="badge badge-success">Online</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-show="account.isLoggedIn()">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
