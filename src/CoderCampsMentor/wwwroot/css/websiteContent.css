@@ -1,12 +1,24 @@
 ﻿body{
     background-color: dimgray;
-    padding-bottom: 20px;
 }
 
 .website-content{
-    margin-top:110px;
+    margin-top: 36px;
     background-color:white;
     padding-bottom: 8px;
-    min-height: 75.5%;
+    min-height: 70.4%;
     padding-top: 10px;
+    margin-right: -30px;
+}
+
+.page-banner {
+    /*border: 1px solid;*/
+    margin-left: 135px;
+    height:110px;
+    margin-top: -4px;
+}
+
+.img-banner {
+    margin-top: -200px;
+    width: 90%;
 }

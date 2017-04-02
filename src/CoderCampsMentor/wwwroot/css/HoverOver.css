@@ -1,17 +1,13 @@
-﻿body {
-    background: #292929;
-    padding-left: 30px;
-}
-.row {
+﻿.row {
     float: left;
     width: 100%;
 }
 .row .block {
-    float: left;
+    /*float: left;*/
     width: 25%;
     height: 150px;
 }
-.hoverbtn {
+/*.hoverbtn {
     display: inline-block;
     font-size: 18px;
     font-weight:400;
@@ -25,8 +21,22 @@
     position: relative;
     text-decoration: none;
     z-index: 1;
-    color: #fff;
+    color: black;
+}*/
+
+.hoverbtn {
+    width: 125px;
+    height: 125px;
+    float:left;
+    margin-left: -15px;
 }
+
+.hoverbtn2 {
+    width: 125px;
+    height: 125px;
+    float:left;
+}
+
 .hoverbtn.small {
     font-size: 20px;
     line-height:45px;
@@ -47,6 +57,16 @@
     padding: 15px;
 }
 .hoverbtn:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content:'';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.hoverbtn2:after {
     pointer-events: none;
     position: absolute;
     width: 100%;
@@ -573,49 +593,100 @@
 }
 /* Effect 8 */
  .hoverbtn.effect-8 {
-    background: rgba(255, 255, 255, 0.1);
     -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
     -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
     transition: transform ease-out 0.1s, background 0.2s;
 }
+
+.hoverbtn2.effect-10 {
+    -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
+    -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
+    transition: transform ease-out 0.1s, background 0.2s;
+}
+
 .hoverbtn.effect-8:after {
     top: 0;
     left: 0;
     padding: 0;
     z-index: -1;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
     opacity: 0;
+
+    height: 125px;
+    width: 125px;
+
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
     -ms-transform: scale(0.9);
     transform: scale(0.9);
 }
+
+.hoverbtn2.effect-10:after {
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: -1;
+    opacity: 0;
+
+    height: 125px;
+    width: 125px;
+
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
 .hoverbtn.effect-8:hover {
-    background: rgba(255, 255, 255, 0.05);
+    /*background: rgba(255, 255, 255, 0.05);*/
     -webkit-transform: scale(0.93);
     -moz-transform: scale(0.93);
     -ms-transform: scale(0.93);
     transform: scale(0.93);
-    color: #fff;
 }
+
+.hoverbtn2.effect-10:hover {
+    /*background: rgba(255, 255, 255, 0.05);*/
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
 .hoverbtn.effect-8:hover i {
-    color: #fff;
+    color: black;
 }
+
 .hoverbtn.effect-8:hover:after {
-    -webkit-animation: sonarEffect 1.3s ease-out 75ms;
-    -moz-animation: sonarEffect 1.3s ease-out 75ms;
-    animation: sonarEffect 1.3s ease-out 75ms;
+    -webkit-animation: sonarEffect 2s ease-out 0ms infinite;
+    -moz-animation: sonarEffect 2s ease-out 0ms infinite;
+    animation: sonarEffect 2s ease-out 0ms infinite;
+
+    /*-webkit-animation: sonarEffect 100s ease-out 0ms infinite;
+    -moz-animation: sonarEffect 100s ease-out 0ms infinite;
+    animation: sonarEffect 100s ease-out 0ms infinite;*/
 }
+
+.hoverbtn2.effect-10:hover:after {
+    -webkit-animation: sonarEffect 2s ease-out 550ms infinite;
+    -moz-animation: sonarEffect 2s ease-out 550ms infinite;
+    animation: sonarEffect 2s ease-out 550ms infinite;
+
+        /*-webkit-animation: sonarEffect 100s ease-out 0ms infinite;
+    -moz-animation: sonarEffect 100s ease-out 0ms infinite;
+    animation: sonarEffect 100s ease-out 0ms infinite;*/
+}
+
 @-webkit-keyframes sonarEffect {
     0% {
         opacity: 0.3;
     }
     40% {
         opacity: 0.5;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #d10411, 0 0 0 10px rgba(255, 255, 255, 0.5),
+            0 0 0 2px rgba(255, 255, 255, 0.1) , 0 0 10px 10px #d10411, 0 0 0 10px rgba(255, 255, 255, 0.5);
     }
     100% {
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #d10411, 0 0 0 10px rgba(255, 255, 255, 0.5);
         -webkit-transform: scale(1.5);
         opacity: 0;
     }
@@ -626,10 +697,10 @@
     }
     40% {
         opacity: 0.5;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #d10411, 0 0 0 10px rgba(255, 255, 255, 0.5);
     }
     100% {
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #d10411, 0 0 0 10px rgba(255, 255, 255, 0.5);
         -moz-transform: scale(1.5);
         opacity: 0;
     }
@@ -640,10 +711,10 @@
     }
     40% {
         opacity: 0.5;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #d10411, 0 0 0 10px rgba(255, 255, 255, 0.5);
     }
     100% {
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #d10411, 0 0 0 10px rgba(255, 255, 255, 0.5);
         transform: scale(1.5);
         opacity: 0;
     }
@@ -691,4 +762,10 @@
 }
 .hoverbtn.effect-9.sub-b:hover i {
     color: #fff;
+}
+
+.cc-box {
+    width: 125px;
+    height: 125px;
+    /*float:left;*/
 }

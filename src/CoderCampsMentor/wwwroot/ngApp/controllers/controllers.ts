@@ -18,14 +18,6 @@ namespace CoderCampsMentor.Controllers {
         }
     }
 
-    export class CodeController {
-        public message = 'Start coding!!!';
-
-        constructor() {
-
-        }
-    }
-
     export class AboutController {
         public message = 'Hello from the about page!';
     }
