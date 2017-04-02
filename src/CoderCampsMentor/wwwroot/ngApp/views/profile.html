@@ -1,64 +1,139 @@
 ﻿
 <div ng-show="account.isLoggedIn()">
-    <div class="container">
-        <br />
-        <a ui-sref="editProfile({id: account.userID})" class="btn btn-warning" ng-click="getCategory()"> Edit Profile</a>
-        <div class="col-lg-8 col-lg-offset-2">
-            <br />
-
-            <img class="dp" ng-src="{{controller.userCategories.picture}}" style="height:128px; width:128px" id="proPicBackground" align="right" />
+    <div class="container" style="margin-top: 30px;">
+        <div class="profile-head">
+            <div class="profile-pic col-md- col-sm-4 col-xs-12">
+                <img ng-src="{{controller.userCategories.picture}}" class="img-responsive" />
+                <h6>{{controller.userCategories.firstName}} {{controller.userCategories.lastName}}</h6>
+            </div>
+            <div class="user_info col-md-5 col-sm-5 col-xs-12">
+                <h5>{{controller.userCategories.firstName}} {{controller.userCategories.lastName}}</h5>
+                <p>Web Designer / Developer </p>
+                <ul>
+                    <li><span class="glyphicon glyphicon-briefcase"></span> 5 years</li>
+                    <li><span class="glyphicon glyphicon-map-marker"></span> {{controller.userCategories.location}}</li>
+                    <li><span class="glyphicon glyphicon-home"></span> 555 street Address,toedo 43606 U.S.A.</li>
+                    <li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">(+021) 956 789123</a></li>
+                    <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail">{{controller.userCategories.email}}</a></li>
+                </ul>
+            </div>
         </div>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                    <td>Location</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{controller.userCategories.firstName}}</td>
-                    <td>{{controller.userCategories.lastName}}</td>
-                    <td>{{controller.userCategories.location}}</td>
-                </tr>
-            </tbody>
-        </table>
+    </div>
+    <div id="sticky" class="container">
+        <ul class="nav nav-tabs nav-menu" role="tablist">
 
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <td>List of Category skills (Programming, music, data science, etc)</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <ul>
-                            <li ng-repeat="cat in controller.userCategories.categories">{{cat.categoryName}}</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            <li>
+                <a ui-sref="editProfile({id: account.userID})" role="tab" data-toggle="tab">
+                    <i class="fa fa-key"></i> Edit Profile
+                </a>
+            </li>
+        </ul>
+    </div>
 
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <td>List of Sub-Category skills (.Net, C#, Java, etc)</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <ul>
-                            <li ng-repeat="subCat in controller.userSubCategories.subCategories">{{subCat.subCategoryName}}
-                            <li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="profile">
+            <div class="container">
+                <div class="col-sm-11" style="float:left;">
+                    <div class="hve-pro">
+                        <p>
+                            Hello I’m Jenifer Smith, a leading expert in interactive and creative design specializing in the mobile medium.
+                            My graduation from Massey University with a Bachelor of Design majoring in visual communication.
+                        </p>
+                    </div><!--hve-pro close-->
+                </div><!--col-sm-12 close-->
+                <br clear="all" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="pro-title"><strong>User Info</strong></h4>
+                    </div><!--col-md-12 close-->
+
+                    <div class="col-md-6">
+                        <div class="table-responsive responsiv-table">
+                            <table class="table bio-table">
+                                <tbody>
+                                    <tr>
+                                        <td>Firstname</td>
+                                        <td>: {{controller.userCategories.firstName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lastname</td>
+                                        <td>: {{controller.userCategories.lastName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Birthday</td>
+                                        <td>: 10 january 1980</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Location</td>
+                                        <td>: {{controller.userCategories.location}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Occupation</td>
+                                        <td>: Web Designer</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!--table-responsive close-->
+                    </div><!--col-md-6 close-->
+                    <div class="col-md-6">
+                        <div class="table-responsive responsiv-table">
+                            <table class="table bio-table">
+                                <tbody>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>: {{controller.userCategories.email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile</td>
+                                        <td>: (+6283) 456 789</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone</td>
+                                        <td>: (+021) 956 789123</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Experience</td>
+                                        <td>: 5 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Twiter</td>
+                                        <td>#@jenifer123</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><!--table-responsive close-->
+                    </div><!--col-md-6 close-->
+                    <h4 class="pro-title"><strong>Concentration</strong></h4>
+                    <div class="col-md-6">
+                        <div class="table-responsive responsiv-table">
+                            <table class="table bio-table">
+                                <tbody>
+                                    <tr ng-repeat="cat in controller.userCategories.categories">
+                                        <td>Courses</td>
+                                        <td>: {{cat.categoryName}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="table-responsive responsiv-table">
+                            <table class="table bio-table">
+                                <tbody>
+                                    <tr ng-repeat="subCat in controller.userSubCategories.subCategories">
+                                        <td>Lessons</td>
+                                        <td>: {{subCat.subCategoryName}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><!--row close-->
+            </div><!--container close-->
+        </div>
     </div>
 </div>
+
 

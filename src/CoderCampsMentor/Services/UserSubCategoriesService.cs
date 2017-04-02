@@ -31,6 +31,7 @@ namespace CoderCampsMentor.Services
                                                  LastName = au.LastName,
                                                  Picture = au.Picture,
                                                  Location = au.Location,
+                                                 Email = au.Email,
                                                  SubCategories = (from usc in _repo.Query<UserSubCategory>()
                                                                   where usc.ApplicationUserId == au.Id
                                                                   select usc.SubCategory).ToList()
