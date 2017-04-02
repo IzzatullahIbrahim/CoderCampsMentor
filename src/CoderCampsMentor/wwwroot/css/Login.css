@@ -151,6 +151,8 @@
 
 .login-register {
     position: absolute;
-    right: 5px;
-    width: 175px;
+    right: 30px;
+    width: 100px;
+    /*border: 1px solid;*/
+    margin-top: -175px;
 }

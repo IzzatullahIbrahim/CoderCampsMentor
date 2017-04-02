@@ -111,12 +111,6 @@ namespace CoderCampsMentor {
                 controller: CoderCampsMentor.Controllers.AboutController,
                 controllerAs: 'controller'
             })
-            .state('code', {
-                url: '/code',
-                templateUrl: '/ngApp/views/code.html',
-                controller: CoderCampsMentor.Controllers.CodeController,
-                controllerAs: 'controller'
-            })
             .state('videoCall', {
                 url: '/videoCall',
                 templateUrl: '/ngApp/views/videoCall.html',
