@@ -14,6 +14,12 @@ namespace CoderCampsMentor.ViewModels
         public string Picture { get; set; }
         public string Location { get; set; }
         public string Email { get; set; }
+        public string Bio { get; set; }
+        public int Experience { get; set; }
+        public string GithubLink { get; set; }
+        public string Occupation { get; set; }
+        public string Birthday { get; set; }
+        public string PhoneNumber { get; set; }
         public List<Category> Categories { get; set; }
     }
 }

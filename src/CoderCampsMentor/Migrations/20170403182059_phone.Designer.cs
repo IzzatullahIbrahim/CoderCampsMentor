@@ -8,9 +8,10 @@ using CoderCampsMentor.Data;
 namespace CoderCampsMentor.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170403182059_phone")]
+    partial class phone
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -57,6 +58,8 @@ namespace CoderCampsMentor.Migrations
                     b.Property<string>("Occupation");
 
                     b.Property<string>("PasswordHash");
+
+                    b.Property<int>("Phone");
 
                     b.Property<string>("PhoneNumber");
 

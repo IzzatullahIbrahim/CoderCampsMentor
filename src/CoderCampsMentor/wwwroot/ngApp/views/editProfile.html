@@ -76,12 +76,11 @@
             </div>
             <div class="user_info col-md-5 col-sm-5 col-xs-12">
                 <h5>{{controller.user.firstName}} {{controller.user.lastName}}</h5>
-                <p>Web Designer / Developer </p>
+                <p>{{controller.user.occupation}}</p>
                 <ul>
-                    <li><span class="glyphicon glyphicon-briefcase"></span> 5 years</li>
-                    <li><span class="glyphicon glyphicon-map-marker"></span> {{controller.user.location}}</li>
-                    <li><span class="glyphicon glyphicon-home"></span> 555 street Address,toedo 43606 U.S.A.</li>
-                    <li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">(+021) 956 789123</a></li>
+                    <li><span class="glyphicon glyphicon-briefcase"></span>{{controller.user.experience}} Years</li>
+                    <li><span class="glyphicon glyphicon-home"></span> {{controller.user.location}}</li>
+                    <li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">{{controller.user.phoneNumber}}</a></li>
                     <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail">{{controller.user.email}}</a></li>
                 </ul>
             </div>
@@ -89,16 +88,15 @@
     </div>
     <div id="sticky" class="container">
         <form ng-submit="controller.saveProfile()">
-    <ul class="nav nav-tabs nav-menu" role="tablist">
+            <ul class="nav nav-tabs nav-menu" role="tablist">
 
-        <li>
-            <a ng-click="controller.pickFile()" role="tab" data-toggle="tab">
-                <i class="fade fa-file"></i> Upload Image
-            </a>
-        </li>
-        <li><a ng-click="controller.saveProfile()" role="tab"><i class="fa fa-flappy-o">Save</i></a></li>
-    </ul>
-</form>
+                <li>
+                    <a ng-click="controller.pickFile()" role="tab" data-toggle="tab">
+                        <i class="fa fa-file"></i> Upload Image
+                    </a>
+                </li>
+            </ul>
+        </form>
     </div>
 
 
@@ -107,11 +105,10 @@
         <div class="tab-pane fade active in" id="profile">
             <div class="container">
                 <div class="col-sm-11" style="float:left;">
-                    <div class="hve-pro">
-                        <p>
-                            Hello I’m Jenifer Smith, a leading expert in interactive and creative design specializing in the mobile medium.
-                            My graduation from Massey University with a Bachelor of Design majoring in visual communication.
-                        </p>
+                    <div class="hve-pro" >
+                        <form>
+                            <textarea ng-model="controller.user.bio"/>
+                        </form>
                     </div><!--hve-pro close-->
                 </div><!--col-sm-12 close-->
                 <br clear="all" />
@@ -122,30 +119,36 @@
 
                     <div class="col-md-6">
                         <div class="table-responsive responsiv-table">
-                            <table class="table bio-table">
-                                <tbody>
-                                    <tr>
-                                        <td>Firstname</td>
-                                        <td>: {{controller.user.firstName}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Lastname</td>
-                                        <td>: {{controller.user.lastName}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Birthday</td>
-                                        <td>: 10 january 1980</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Location</td>
-                                        <td>: {{controller.userCategories.location}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Occupation</td>
-                                        <td>: Web Designer</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                <table class="table bio-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>FirstName</td>
+                                            <td>: <input ng-model="controller.user.firstName" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lastname</td>
+                                            <td>: <input ng-model="controller.user.lastName" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Birthday</td>
+                                            <td>: <input ng-model="controller.user.birthday" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location</td>
+                                            <td>
+                                                : <select ng-model="controller.user.location">
+                                                    <option value="Seattle, WA">Seattle, WA</option>
+                                                    <option value="Phoenix, AZ">Phoenix, AZ</option>
+                                                    <option value="Houston, TX">Houston, TX</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Occupation</td>
+                                            <td>: <input ng-model="controller.user.occupation" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                         </div><!--table-responsive close-->
                     </div><!--col-md-6 close-->
                     <div class="col-md-6">
@@ -154,26 +157,23 @@
                                 <tbody>
                                     <tr>
                                         <td>Email</td>
-                                        <td>: {{controller.user.email}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mobile</td>
-                                        <td>: (+6283) 456 789</td>
+                                        <td>: <input ng-model="controller.user.email" /></td>
                                     </tr>
                                     <tr>
                                         <td>Phone</td>
-                                        <td>: (+021) 956 789123</td>
+                                        <td>: <input ng-model="controller.user.phoneNumber" /></td>
                                     </tr>
                                     <tr>
                                         <td>Experience</td>
-                                        <td>: 5 years</td>
+                                        <td>: <input ng-model="controller.user.experience" /></td>
                                     </tr>
                                     <tr>
-                                        <td>Twiter</td>
-                                        <td>#@jenifer123</td>
+                                        <td>GitHub</td>
+                                        <td>: <input ng-model="controller.user.githubLink" /></td>
                                     </tr>
                                 </tbody>
                             </table>
+                        <button class="fa fa-floppy-o" ng-click="controller.saveProfile()">Save</button>
                         </div><!--table-responsive close-->
                     </div><!--col-md-6 close-->
                     <h4 class="pro-title"><strong>Concentration</strong></h4>
