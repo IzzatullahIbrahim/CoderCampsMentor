@@ -7,12 +7,11 @@
             </div>
             <div class="user_info col-md-5 col-sm-5 col-xs-12">
                 <h5>{{controller.userCategories.firstName}} {{controller.userCategories.lastName}}</h5>
-                <p>Web Designer / Developer </p>
+                <p>{{controller.userCategories.occupation}}</p>
                 <ul>
-                    <li><span class="glyphicon glyphicon-briefcase"></span> 5 years</li>
-                    <li><span class="glyphicon glyphicon-map-marker"></span> {{controller.userCategories.location}}</li>
-                    <li><span class="glyphicon glyphicon-home"></span> 555 street Address,toedo 43606 U.S.A.</li>
-                    <li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">(+021) 956 789123</a></li>
+                    <li><span class="glyphicon glyphicon-briefcase"></span>{{controller.userCategories.experience}} Years</li>
+                    <li><span class="glyphicon glyphicon-home"></span> {{controller.userCategories.location}}</li>
+                    <li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">{{controller.userCategories.phoneNumber}}</a></li>
                     <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail">{{controller.userCategories.email}}</a></li>
                 </ul>
             </div>
@@ -33,10 +32,7 @@
             <div class="container">
                 <div class="col-sm-11" style="float:left;">
                     <div class="hve-pro">
-                        <p>
-                            Hello I’m Jenifer Smith, a leading expert in interactive and creative design specializing in the mobile medium.
-                            My graduation from Massey University with a Bachelor of Design majoring in visual communication.
-                        </p>
+                        <p>{{controller.userCategories.bio}}</p>
                     </div><!--hve-pro close-->
                 </div><!--col-sm-12 close-->
                 <br clear="all" />
@@ -58,7 +54,7 @@
                                     </tr>
                                     <tr>
                                         <td>Birthday</td>
-                                        <td>: 10 january 1980</td>
+                                        <td>: {{controller.userCategories.birthday}}</td>
                                     </tr>
                                     <tr>
                                         <td>Location</td>
@@ -66,7 +62,7 @@
                                     </tr>
                                     <tr>
                                         <td>Occupation</td>
-                                        <td>: Web Designer</td>
+                                        <td>: {{controller.userCategories.occupation}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -81,20 +77,16 @@
                                         <td>: {{controller.userCategories.email}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Mobile</td>
-                                        <td>: (+6283) 456 789</td>
-                                    </tr>
-                                    <tr>
                                         <td>Phone</td>
-                                        <td>: (+021) 956 789123</td>
+                                        <td>: {{controller.userCategories.phoneNumber}}</td>
                                     </tr>
                                     <tr>
                                         <td>Experience</td>
-                                        <td>: 5 years</td>
+                                        <td>: {{controller.userCategories.experience}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Twiter</td>
-                                        <td>#@jenifer123</td>
+                                        <td>GitHub</td>
+                                        <td>: <a href="{{controller.userCategories.githubLink}}"> {{controller.userCategories.githubLink}}</a></td>
                                     </tr>
                                 </tbody>
                             </table>

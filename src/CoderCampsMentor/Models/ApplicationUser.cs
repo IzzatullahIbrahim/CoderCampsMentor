@@ -13,7 +13,11 @@ namespace CoderCampsMentor.Models
         public string LastName { get; set; }
         public string Picture { get; set; }
         public string Location { get; set; }
-
+        public string Bio { get; set; }
+        public int Experience { get; set; }
+        public string GithubLink { get; set; }
+        public string Occupation { get; set; }
+        public string Birthday { get; set; }
         public ICollection<UserCategory> UserCategory { get; set; }
         public ICollection<UserSubCategory> UserSubCategories { get; set; }
     }

@@ -27,7 +27,13 @@ namespace CoderCampsMentor.Services
                                                   Picture = au.Picture,
                                                   UserName = au.UserName,
                                                   Location = au.Location,
-                                                  Email = au.Email
+                                                  Email = au.Email,
+                                                  Bio = au.Bio,
+                                                  Experience = au.Experience,
+                                                  GithubLink = au.GithubLink,
+                                                  Occupation = au.Occupation,
+                                                  Birthday = au.Birthday,
+                                                  PhoneNumber = au.PhoneNumber
                                               }).ToList();
             return appUsers;
         }
@@ -44,7 +50,13 @@ namespace CoderCampsMentor.Services
                                         ConcurrencyStamp = u.ConcurrencyStamp,
                                         Picture = u.Picture,
                                         UserName = u.UserName,
-                                        Location = u.Location
+                                        Location = u.Location,
+                                        Bio = u.Bio,
+                                        Experience = u.Experience,
+                                        GithubLink = u.GithubLink,
+                                        Occupation = u.Occupation,
+                                        Birthday = u.Birthday,
+                                        PhoneNumber = u.PhoneNumber
 
                                     }).FirstOrDefault();
             return user;
@@ -65,6 +77,12 @@ namespace CoderCampsMentor.Services
             input.UserName = user.UserName;
             input.Location = user.Location;
             input.Email = user.Email;
+            input.Bio = user.Bio;
+            input.Experience = user.Experience;
+            input.GithubLink = user.GithubLink;
+            input.Occupation = user.Occupation;
+            input.Birthday = user.Birthday;
+            input.PhoneNumber = user.PhoneNumber;
             _repo.SaveChanges();
         }
     }
