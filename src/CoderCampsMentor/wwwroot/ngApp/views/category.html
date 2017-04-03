@@ -8,8 +8,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{{controller.category.categoryName}}</td>
+                <tr class="">
+                    <td class="well well-sm">{{controller.category.categoryName}}</td>
                 </tr>
             </tbody>
         </table>
@@ -23,9 +23,9 @@
             <tbody>
                 <tr>
                     <td>
-                        <ul>
-                            <li ng-repeat="csc in controller.catSubCategory.subCategories">
-                                <a ui-sref="subCategory({id: csc.id})">{{csc.subCategoryName}}</a>
+                        <ul id="scatter">
+                            <li ng-repeat="csc in controller.catSubCategory.subCategories" class="item" id="scat">
+                                <a id="li-text" ui-sref="subCategory({id: csc.id})" class="well-sm">{{csc.subCategoryName}}</a>
                             </li>
                         </ul>
                     </td>

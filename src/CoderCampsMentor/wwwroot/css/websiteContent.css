@@ -4,10 +4,10 @@
 
 .website-content{
     margin-top: 36px;
-    background-color:white;
+    background: url("http://backgrounds4k.net/wp-content/uploads/2016/03/White-Abstract-widescreen.jpg");
     padding-bottom: 8px;
     min-height: 70.4%;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     margin-right: -30px;
 }
 
