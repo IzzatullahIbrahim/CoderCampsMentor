@@ -32,6 +32,12 @@ namespace CoderCampsMentor.Services
                                               LastName = au.LastName,
                                               Location = au.Location,
                                               Email = au.Email,
+                                              Bio = au.Bio,
+                                              Experience = au.Experience,
+                                              GithubLink = au.GithubLink,
+                                              Occupation = au.Occupation,
+                                              Birthday = au.Birthday,
+                                              PhoneNumber = au.PhoneNumber,
                                               Categories = (from uc in _repo.Query<UserCategory>()
                                                             where uc.ApplicationUserId == au.Id
                                                             select uc.Category).ToList(),
