@@ -11,7 +11,6 @@
     <link href="~/css/websiteContent.css" rel="stylesheet" />
     <link href="~/css/listofUsers.css" rel="stylesheet" />
     <link href="~/css/HoverOver.css" rel="stylesheet" />
-    <link href="~/css/HoverOver2.css" rel="stylesheet" />
 
     <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -53,7 +52,7 @@
                     <a href="/addSubCategory" ng-show="account.getClaim('IsAdmin')">Add a lesson</a>
                 </li>
                 <li>
-                    <a ng-show="account.isLoggedIn()" href="/videoCall">Video Call</a>
+                    <a ng-show="account.isLoggedIn()" href="http://localhost:30000/">Video Call</a>
                 </li>
                 <li>
                     <a href="/secret" ng-show="account.getClaim('IsAdmin')">Secret</a>
@@ -64,17 +63,17 @@
             </ul>
         </div>
 
-        <div id="page-content-wrapper" >
-            <div class="container-fluid" >
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="hoverbtn effect-8">
                             <a href="#menu-toggle" class="hoverbtn2 effect-10 bb" id="menu-toggle"><img class="cc-box" src="/images/CoderGear[3077].png" /></a>
-                        </div>               
+                        </div>
                     </div>
 
                     <!-- Page Banner -->
-                    <div class="page-banner">
+                    <div class="page-banner container-fluid">
                         <img class="img-banner" src="~/images/newCCbanner.png" />
 
                         <!-- Start of login and register page-->
@@ -220,6 +219,31 @@
 
                     <div class="website-content container-fluid">
                         <ui-view></ui-view>
+
+                        @*<div class="container">
+                            <div class="make-center">
+                                <input type="text" id="room-id" value="abcdef">
+
+                                <button id="enter-room">Enter Room</button>
+
+                                <br><br>
+                                <input type="text" id="input-text-chat" placeholder="Enter Text Chat" disabled>
+                                <button id="share-file" disabled>Share File</button>
+
+                                <br><br>
+                                <button id="disconnect" disabled>Disconnect</button>
+
+                                <div id="room-urls"></div>
+                            </div>
+
+                            <div id="videos-container"></div>
+
+                            <div id="chat-container">
+                                <div id="file-container"></div>
+                                <div class="chat-output"></div>
+                            </div>
+                        </div>*@
+
                     </div>
                 </div>
             </div>
@@ -249,7 +273,7 @@
     <script src="~/ngApp/controllers/applicationUsersController.js"></script>
     <script src="~/ngApp/controllers/categoriesController.js"></script>
     <script src="~/ngApp/controllers/subCategoriesController.js"></script>
-    <script src="~/ngapp/controllers/videocallcontroller.js"></script>
+    <script src="~/ngapp/controllers/videoCallController.js"></script>
 
     <!-- Video Call script -->
     @*<script src="~/ngApp/videoCall.js"></script>*@

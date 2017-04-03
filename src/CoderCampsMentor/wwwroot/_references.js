@@ -25,3 +25,4 @@
 /// <reference path="ngapp/services/commservice.js" />
 /// <reference path="ngapp/services/profileservice.js" />
 /// <reference path="ngapp/services/services.js" />
+/// <reference path="ngapp/videocall.js" />
