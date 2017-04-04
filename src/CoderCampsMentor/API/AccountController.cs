@@ -109,6 +109,7 @@ namespace CoderCampsMentor.Controllers
                     LastName = model.LastName,
                     Location = model.Location,
                     Picture = model.Picture,
+                    Bio = model.Bio,
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
