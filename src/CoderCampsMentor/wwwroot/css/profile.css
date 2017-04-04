@@ -22,7 +22,7 @@ ul {
     color: black;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Macondo|Nothing+You+Could+Do');
+/*@import url('https://fonts.googleapis.com/css?family=Macondo|Nothing+You+Could+Do');*/
 
 #li-text {
     color: dimgray;
@@ -254,17 +254,7 @@ a, a:hover {
     text-align: center;
     padding: 10px;
 }
-.gif{
-    height:100%;
-    width: 100%;
-    margin-top: -10px;
-    border: 1px solid;
-    margin-bottom: -10px;
-}
-.gif2 {
-    height: 100%;
-    width: 100%;
-}
+
 .tab-content > .active {
     margin-top: 50px; /*width:100% !important;*/
 }

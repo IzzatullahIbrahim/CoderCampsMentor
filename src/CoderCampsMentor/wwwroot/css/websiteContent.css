@@ -3,16 +3,15 @@
 }
 
 .website-content{
-    margin-top: 36px;
+    margin-top: 27px;
     background: url("http://backgrounds4k.net/wp-content/uploads/2016/03/White-Abstract-widescreen.jpg");
     padding-bottom: 8px;
     min-height: 70.4%;
-    /*padding-top: 10px;*/
+    padding-top: 10px;
     margin-right: -30px;
 }
 
 .page-banner {
-    /*border: 1px solid;*/
     margin-left: 135px;
     height:110px;
     margin-top: -4px;
@@ -22,6 +21,24 @@
     margin-top: -200px;
     width: 90%;
 }
+<<<<<<< HEAD
+
+.gif{
+    height:100%;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    /*margin-left: -20px;*/
+    margin-right: -20px;
+    border: 1px solid;
+
+}
+.gif2 {
+    height: 100%;
+    width: 100%;
+}
+=======
 .error-template {padding: 40px 15px;text-align: center;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }
+>>>>>>> master

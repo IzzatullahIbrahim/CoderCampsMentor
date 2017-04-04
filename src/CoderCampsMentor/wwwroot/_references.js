@@ -12,6 +12,7 @@
 /// <reference path="../bower_components/jquery-validation/dist/jquery.validate.js" />
 /// <reference path="../bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
 /// <reference path="lib/Navbar.js" />
+/// <reference path="lib/videocall.js" />
 /// <reference path="ngapp/app.js" />
 /// <reference path="ngapp/controllers/accountcontroller.js" />
 /// <reference path="ngapp/controllers/applicationuserscontroller.js" />
