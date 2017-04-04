@@ -11,6 +11,7 @@
     <link href="~/css/websiteContent.css" rel="stylesheet" />
     <link href="~/css/listofUsers.css" rel="stylesheet" />
     <link href="~/css/HoverOver.css" rel="stylesheet" />
+    <link href="~/css/videoCall.css" rel="stylesheet" />
 
     <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -26,39 +27,36 @@
 
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="dp navbar-img"><a ui-sref="profile({id: account.getUserId()})" ng-show="account.isLoggedIn()"><img class="dp" ng-src="{{account.getPicture()}}" /></a></li>
+                <li class="dp navbar-img"><a ui-sref="profile({id: account.getUserId()})" ng-show="account.isLoggedIn()"><img class="dp" ng-src="{{account.getPicture()}}" id="exit-video-call-1"/></a></li>
                 <li class="navbar-img text-align-center" ng-show="account.isLoggedIn()">
                     <p>{{account.getUserName()}}</p>
                 </li>
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/" id="exit-video-call-2">Home</a>
                 </li>
                 <li>
-                    <a href="/about">About</a>
+                    <a href="/about" id="exit-video-call-3">About</a>
                 </li>
                 <li>
-                    <a href="/applicationUsers" ng-show="account.isLoggedIn()">Mentors</a>
+                    <a href="/applicationUsers" ng-show="account.isLoggedIn()" id="exit-video-call-4">Mentors</a>
                 </li>
                 <li>
-                    <a href="/categories" ng-show="account.isLoggedIn()">Courses</a>
+                    <a href="/categories" ng-show="account.isLoggedIn()" id="exit-video-call-5">Courses</a>
                 </li>
                 <li>
-                    <a href="/addCategory" ng-show="account.getClaim('IsAdmin')">Add a course</a>
+                    <a href="/addCategory" ng-show="account.getClaim('IsAdmin')" id="exit-video-call-6">Add a course</a>
                 </li>
                 <li>
-                    <a href="/subCategories" ng-show="account.isLoggedIn()">Lessons</a>
+                    <a href="/subCategories" ng-show="account.isLoggedIn()" id="exit-video-call-7">Lessons</a>
                 </li>
                 <li>
-                    <a href="/addSubCategory" ng-show="account.getClaim('IsAdmin')">Add a lesson</a>
+                    <a href="/addSubCategory" ng-show="account.getClaim('IsAdmin')" id="exit-video-call-8">Add a lesson</a>
                 </li>
                 <li>
-                    <a ng-show="account.isLoggedIn()" href="http://localhost:30000/">Video Call</a>
+                    <a ng-show="account.isLoggedIn()" id="video-call" href="/">Video Call</a>
                 </li>
                 <li>
-                    <a href="/secret" ng-show="account.getClaim('IsAdmin')">Secret</a>
-                </li>
-                <li>
-                    <a class="logout" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
+                    <a class="logout" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()" id="exit-video-call-9">Logout</a>
                 </li>
             </ul>
         </div>
@@ -218,32 +216,37 @@
                     </div>
 
                     <div class="website-content container-fluid">
-                        <ui-view></ui-view>
 
-                        @*<div class="container">
-                            <div class="make-center">
-                                <input type="text" id="room-id" value="abcdef">
+                        <div id="myDIV">
+                            <div class="container">
+                                <div class="make-center">
+                                    <input type="text" id="room-id" value="abcdef">
 
-                                <button id="enter-room">Enter Room</button>
+                                    <button id="enter-room">Enter Room</button>
+                                    <button id="exit-video-call2">Exit Video Call</button>
 
-                                <br><br>
-                                <input type="text" id="input-text-chat" placeholder="Enter Text Chat" disabled>
-                                <button id="share-file" disabled>Share File</button>
+                                    <br><br>
+                                    <input type="text" id="input-text-chat" placeholder="Enter Text Chat" disabled>
+                                    <button id="share-file" ng-click="controller.shareFile()">Share File</button>
 
-                                <br><br>
-                                <button id="disconnect" disabled>Disconnect</button>
+                                    <br><br>
+                                    <button id="disconnect" disabled>Disconnect</button>
 
-                                <div id="room-urls"></div>
+                                    <div id="room-urls"></div>
+                                </div>
+
+                                <div id="videos-container"></div>
+
+                                <div id="chat-container">
+                                    <div id="file-container"></div>
+                                    <div class="chat-output"></div>
+                                </div>
                             </div>
+                        </div>
 
-                            <div id="videos-container"></div>
-
-                            <div id="chat-container">
-                                <div id="file-container"></div>
-                                <div class="chat-output"></div>
-                            </div>
-                        </div>*@
-
+                        <div id="content-of-site">
+                            <ui-view></ui-view>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -276,7 +279,7 @@
     <script src="~/ngapp/controllers/videoCallController.js"></script>
 
     <!-- Video Call script -->
-    @*<script src="~/ngApp/videoCall.js"></script>*@
+    <script src="~/lib/videoCall.js"></script>
 
     <!-- Navbar script -->
     <script src="~/lib/Navbar.js"></script>

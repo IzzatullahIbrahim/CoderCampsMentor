@@ -3,16 +3,11 @@
 }
 
 .website-content{
-<<<<<<< HEAD
     margin-top: 27px;
-    background-color:white;
-=======
-    margin-top: 36px;
     background: url("http://backgrounds4k.net/wp-content/uploads/2016/03/White-Abstract-widescreen.jpg");
->>>>>>> master
     padding-bottom: 8px;
     min-height: 70.4%;
-    /*padding-top: 10px;*/
+    padding-top: 10px;
     margin-right: -30px;
 }
 
@@ -25,4 +20,19 @@
 .img-banner {
     margin-top: -200px;
     width: 90%;
+}
+
+.gif{
+    height:100%;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    /*margin-left: -20px;*/
+    margin-right: -20px;
+    border: 1px solid;
+
+}
+.gif2 {
+    height: 100%;
+    width: 100%;
 }
