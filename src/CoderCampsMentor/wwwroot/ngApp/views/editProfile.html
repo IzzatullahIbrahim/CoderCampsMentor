@@ -1,73 +1,4 @@
-﻿<!--<div ng-show="account.isLoggedIn()">
-    <div class="container">
-        <div>
-            <img class="dp" ng-src="{{controller.user.picture}}" style="height:128px; width:128px" id="proPicBackground" align="right" />
-        </div>
-        <div>
-                <form ng-submit="controller.saveProfile()">
-                    <div>
-                        <button type="button" ng-click="controller.pickFile()" class="btn btn-primary">Upload Image</button>
-                        <button type="submit" class="btn btn-success">Save</button>
-                    </div>
-                </form>
-            <button ng-click="controller.defaultPic()" class="btn btn-warning">Default pic</button>
-        </div>
-        <div>
-                <form ng-submit="controller.editProfile()" class="form form-group">
-                    <label>First Name</label>
-                    <input type="text" ng-model="controller.user.firstName" />
-                    <label>Last Name</label>
-                    <input type="text" ng-model="controller.user.lastName" />
-
-                    <div>
-                        <label>Location:</label>
-                        <select ng-model="controller.user.location">
-                            <option value="Seattle, WA">Seattle, WA</option>
-                            <option value="Phoenix, AZ">Phoenix, AZ</option>
-                            <option value="Houston, TX">Houston, TX</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-success">Save</button>
-                </form>
-        </div>
-        <form class="form-horizontal">
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>List of Category skills (Programming, music, data science, etc)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="cat in controller.userCategories.categories">
-                            <td class="form-control"><a ui-sref="category({id: cat.id})">{{cat.categoryName}}</a></td>
-                            <td class="form-control"><button class="btn btn-danger">Delete</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-            </form>
-        <form class="form-horizontal">
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>List of Sub-Category skills (.Net, C#, Java, etc)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="subCat in  controller.userSubCategories.subCategories">
-                            <td><a ui-sref="subCategory({id: subCat.id})">{{subCat.subCategoryName}}</a></td>
-                            <td><button class="btn btn-danger">Delete</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </form>
-        </div>
-    </div>-->
-
-<div ng-show="account.isLoggedIn()">
+﻿<div ng-show="account.isLoggedIn()">
     <div class="container" style="margin-top: 30px;">
         <div class="profile-head">
             <div class="profile-pic col-md- col-sm-4 col-xs-12">
@@ -78,10 +9,10 @@
                 <h5>{{controller.user.firstName}} {{controller.user.lastName}}</h5>
                 <p>{{controller.user.occupation}}</p>
                 <ul>
-                    <li><span class="glyphicon glyphicon-briefcase"></span>{{controller.user.experience}} Years</li>
+                    <li><span class="glyphicon glyphicon-briefcase"></span> {{controller.user.experience}} Years</li>
                     <li><span class="glyphicon glyphicon-home"></span> {{controller.user.location}}</li>
-                    <li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">{{controller.user.phoneNumber}}</a></li>
-                    <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail">{{controller.user.email}}</a></li>
+                    <li><span class="glyphicon glyphicon-phone"></span> {{controller.user.phoneNumber}}</li>
+                    <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail"> {{controller.user.email}}</a></li>
                 </ul>
             </div>
         </div>
@@ -107,7 +38,7 @@
                 <div class="col-sm-11" style="float:left;">
                     <div class="hve-pro" >
                         <form>
-                            <textarea ng-model="controller.user.bio"/>
+                            <textarea ng-model="controller.user.bio" class="user-bio"/>
                         </form>
                     </div><!--hve-pro close-->
                 </div><!--col-sm-12 close-->
@@ -173,7 +104,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        <button class="fa fa-floppy-o" ng-click="controller.saveProfile()">Save</button>
                         </div><!--table-responsive close-->
                     </div><!--col-md-6 close-->
                     <h4 class="pro-title"><strong>Concentration</strong></h4>
@@ -181,7 +111,7 @@
                         <div class="table-responsive responsiv-table">
                             <table class="table bio-table">
                                 <tbody>
-                                    <tr ng-repeat="cat in controller.userCategories.categories">
+                                    <tr ng-repeat="cat in controller.categories">
                                         <td>Courses</td>
                                         <td>: {{cat.categoryName}}</td>
                                     </tr>
@@ -193,14 +123,16 @@
                         <div class="table-responsive responsiv-table">
                             <table class="table bio-table">
                                 <tbody>
-                                    <tr ng-repeat="subCat in controller.userSubCategories.subCategories">
+                                    <tr ng-repeat="subCat in controller.subCategories">
                                         <td>Lessons</td>
-                                        <td>: {{subCat.subCategoryName}}</td>
+                                        <td>: {{subCat.subCategoryName}} <input type="checkbox" /></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+
+                    <button id="save" class="fa fa-floppy-o btn btn-primary" ng-click="controller.saveProfile()"> Save</button>
                 </div><!--row close-->
             </div><!--container close-->
         </div>
