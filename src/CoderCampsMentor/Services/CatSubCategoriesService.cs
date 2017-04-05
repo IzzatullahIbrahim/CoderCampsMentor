@@ -25,7 +25,8 @@ namespace CoderCampsMentor.Services
                                      {
                                          Id = c.Id,
                                          CategoryName = c.CategoryName,
-                                         SubCategories = c.SubCategories
+                                         SubCategories = c.SubCategories,
+                                         catImageUrl = c.catImageUrl
                                      }).FirstOrDefault();
                 return category;
             }

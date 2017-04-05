@@ -24,7 +24,6 @@
 
         constructor(private $http: ng.IHttpService, private $stateParams: ng.ui.IStateParamsService) {
             let cId = this.$stateParams['id'];
-            console.log(cId);
 
             this.$http.get('/api/catSubCategories/' + cId).then((response) => {
                 this.catSubCategory = response.data;
@@ -50,6 +49,7 @@
             })
         }
     }
+
     export class EditCategoryController {
         public message = 'Hello from edit category page';
         public category;
