@@ -1,12 +1,112 @@
-﻿.video {
-    border: 1px solid;
+﻿.bs-calltoaction{
+    position: relative;
+    width:auto;
+    padding: 15px 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
-.outer-video-container {
-    border: 1px solid;
+    .bs-calltoaction > .row{
+        display:table;
+        width: calc(100% + 30px);
+    }
+     
+        .bs-calltoaction > .row > [class^="col-"],
+        .bs-calltoaction > .row > [class*=" col-"]{
+            float:none;
+            display:table-cell;
+            vertical-align:middle;
+        }
+
+            .cta-contents{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+                .cta-title{
+                    margin: 0 auto 15px;
+                    padding: 0;
+                }
+
+                .cta-desc{
+                    padding: 0;
+                }
+
+                .cta-desc p:last-child{
+                    margin-bottom: 0;
+                }
+
+            .cta-button{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+@media (max-width: 991px){
+    .bs-calltoaction > .row{
+        display:block;
+        width: auto;
+    }
+
+        .bs-calltoaction > .row > [class^="col-"],
+        .bs-calltoaction > .row > [class*=" col-"]{
+            float:none;
+            display:block;
+            vertical-align:middle;
+            position: relative;
+        }
+
+        .cta-contents{
+            text-align: center;
+        }
 }
 
-.video-2 {
-    border: 3px solid;
-    border-color: red;
+.bs-calltoaction.bs-calltoaction-danger{
+    color: #fff;
+    background-color: #d10411;
+}
+
+.outer-video-button {
+    height: 30%;
+}
+
+.inner-video-button {
+    height: 100%;
+    margin-top: 0px;
+}
+
+.btn-ours {
+    background-color: #d10411;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.enter-button {
+    margin-left:20%;
+}
+
+.disconnect-button {
+    width: 100%;
+}
+
+.text-button {
+    height: 10%;
+}
+
+.text-input {
+    display: inline-block;
+    width: 92.1%;
+    height: 52.5%;
+    border-radius: 2.5px;
+}
+
+.share-button {
+    border-radius: 2.5px;
+}
+
+.chat-box {
+    height: 35%;
+    overflow: scroll;
+    border: 2.5px solid #d10411;
+    border-radius: 2.5px;
 }
