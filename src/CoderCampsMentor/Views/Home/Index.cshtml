@@ -12,6 +12,7 @@
     <link href="~/css/listofUsers.css" rel="stylesheet" />
     <link href="~/css/HoverOver.css" rel="stylesheet" />
     <link href="~/css/videoCall.css" rel="stylesheet" />
+    <link href="~/css/CategoriesAndSubCategories.css" rel="stylesheet" />
 
     <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -53,7 +54,10 @@
                     <a href="/addSubCategory" ng-show="account.getClaim('IsAdmin')" id="exit-video-call-8">Add a lesson</a>
                 </li>
                 <li>
-                    <a ng-show="account.isLoggedIn()" id="video-call" href="/">Video Call</a>
+                    <a ng-show="account.isLoggedIn()" id="public-room" href="/">Public Room</a>
+                </li>
+                <li>
+                    <a ng-show="account.isLoggedIn()" id="private-room" href="/">Private Room</a>
                 </li>
                 <li>
                     <a class="logout" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()" id="exit-video-call-9">Logout</a>
@@ -221,12 +225,12 @@
                     <div class="website-content container-fluid">
 
                         <div id="myDIV">
-                            <div class="container">
+                            <div class="container fluid outer-video-container">
+
                                 <div class="make-center">
                                     <input type="text" id="room-id" value="abcdef">
 
                                     <button id="enter-room">Enter Room</button>
-                                    <button id="exit-video-call2">Exit Video Call</button>
 
                                     <br><br>
                                     <input type="text" id="input-text-chat" placeholder="Enter Text Chat" disabled>
@@ -238,12 +242,15 @@
                                     <div id="room-urls"></div>
                                 </div>
 
-                                <div id="videos-container"></div>
-
+                                <div class="video">
+                                    <div id="videos-container"></div>
+                                </div>
+                                
                                 <div id="chat-container">
                                     <div id="file-container"></div>
                                     <div class="chat-output"></div>
                                 </div>
+
                             </div>
                         </div>
 
@@ -279,7 +286,6 @@
     <script src="~/ngApp/controllers/applicationUsersController.js"></script>
     <script src="~/ngApp/controllers/categoriesController.js"></script>
     <script src="~/ngApp/controllers/subCategoriesController.js"></script>
-    <script src="~/ngapp/controllers/videoCallController.js"></script>
 
     <!-- Video Call script -->
     <script src="~/lib/videoCall.js"></script>

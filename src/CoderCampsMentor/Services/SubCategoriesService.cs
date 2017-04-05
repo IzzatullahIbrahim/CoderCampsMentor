@@ -25,7 +25,8 @@ namespace CoderCampsMentor.Services
                                                select new SubCategory
                                                {
                                                    Id = sc.Id,
-                                                   SubCategoryName = sc.SubCategoryName
+                                                   SubCategoryName = sc.SubCategoryName,
+                                                   subCatImageUrl = sc.subCatImageUrl
                                                }).ToList();
             return subCategories;
         }

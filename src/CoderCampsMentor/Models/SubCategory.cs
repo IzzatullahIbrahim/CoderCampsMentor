@@ -9,6 +9,7 @@ namespace CoderCampsMentor.Models
     {
         public int Id { get; set; }
         public string SubCategoryName { get; set; }
+        public string subCatImageUrl { get; set; }
 
         public Category Category { get; set; }
 

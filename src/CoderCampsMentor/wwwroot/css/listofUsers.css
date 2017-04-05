@@ -756,8 +756,8 @@
 
 .listofUsersContainer {
     padding-left: 128px;
-    margin-top: -10px;
     min-height: 80%;
+    padding-top:5%;
 }
 
 .user-style {
@@ -771,4 +771,12 @@
 
 .add-float {
     display: inline-block;
+}
+
+.margin-search-2 {
+    margin-left: 0px;
+    padding-left: 8.1%;
+    padding-bottom: 0.75%;
+    margin-bottom: 1.5%;
+    height:11.5%;
 }

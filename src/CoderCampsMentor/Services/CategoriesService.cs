@@ -26,7 +26,8 @@ namespace CoderCampsMentor.Services
                                          select new Category
                                          {
                                              Id = c.Id,
-                                             CategoryName = c.CategoryName
+                                             CategoryName = c.CategoryName,
+                                             catImageUrl = c.catImageUrl
                                          }).ToList();
             return categories;
         }

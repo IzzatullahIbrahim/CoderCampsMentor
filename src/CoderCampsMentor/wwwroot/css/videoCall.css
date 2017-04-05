@@ -1,1 +1,12 @@
-﻿
+﻿.video {
+    border: 1px solid;
+}
+
+.outer-video-container {
+    border: 1px solid;
+}
+
+.video-2 {
+    border: 3px solid;
+    border-color: red;
+}
