@@ -36,9 +36,9 @@
         <div class="tab-pane fade active in" id="profile">
             <div class="container">
                 <div class="col-sm-11" style="float:left;">
-                    <div class="hve-pro" >
+                    <div class="hve-pro">
                         <form>
-                            <textarea ng-model="controller.user.bio" class="user-bio"/>
+                            <textarea ng-model="controller.user.bio" class="user-bio" />
                         </form>
                     </div><!--hve-pro close-->
                 </div><!--col-sm-12 close-->
@@ -50,36 +50,36 @@
 
                     <div class="col-md-6">
                         <div class="table-responsive responsiv-table">
-                                <table class="table bio-table">
-                                    <tbody>
-                                        <tr>
-                                            <td>FirstName</td>
-                                            <td>: <input ng-model="controller.user.firstName" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Lastname</td>
-                                            <td>: <input ng-model="controller.user.lastName" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Birthday</td>
-                                            <td>: <input ng-model="controller.user.birthday" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Location</td>
-                                            <td>
-                                                : <select ng-model="controller.user.location">
-                                                    <option value="Seattle, WA">Seattle, WA</option>
-                                                    <option value="Phoenix, AZ">Phoenix, AZ</option>
-                                                    <option value="Houston, TX">Houston, TX</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Occupation</td>
-                                            <td>: <input ng-model="controller.user.occupation" /></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <table class="table bio-table">
+                                <tbody>
+                                    <tr>
+                                        <td>FirstName</td>
+                                        <td>: <input ng-model="controller.user.firstName" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lastname</td>
+                                        <td>: <input ng-model="controller.user.lastName" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Birthday</td>
+                                        <td>: <input ng-model="controller.user.birthday" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Location</td>
+                                        <td>
+                                            : <select ng-model="controller.user.location">
+                                                <option value="Seattle, WA">Seattle, WA</option>
+                                                <option value="Phoenix, AZ">Phoenix, AZ</option>
+                                                <option value="Houston, TX">Houston, TX</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Occupation</td>
+                                        <td>: <input ng-model="controller.user.occupation" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div><!--table-responsive close-->
                     </div><!--col-md-6 close-->
                     <div class="col-md-6">
@@ -121,21 +121,27 @@
                     </div>
                     <div class="col-md-6">
                         <div class="table-responsive responsiv-table">
-                            <table class="table bio-table">
+                        <!--  <table class="table bio-table">
                                 <tbody>
                                     <tr ng-repeat="subCat in controller.subCategories">
                                         <td>Lessons</td>
-                                        <td>: {{subCat.subCategoryName}} <input type="checkbox" /></td>
-                                    </tr>
+                                        <td>: {{subCat.subCategoryName}} <input type="checkbox" ng-model="controller.UserCategory.subCategories" ng-true-value="'{{subCat.subCategoryName}} Added'" ng-false-value="'{{subCat.subCategoryName}} Removed'" /></td>
+
                                 </tbody>
-                            </table>
+                            </table> -->  
+                            <select ng-model="controller.UserCategory.categories" ng-options="cat as cat.categoryName for cat in controller.categories track by cat.id" multiple></select>
+
+
+                            <select ng-model="controller.UserSubCategory.subCategories" ng-options="subCat as subCat.subCategoryName for subCat in controller.subCategories" multiple></select>
                         </div>
                     </div>
 
-                    <button id="save" class="fa fa-floppy-o btn btn-primary" ng-click="controller.saveProfile()"> Save</button>
+                    <button id="save" class="fa fa-floppy-o btn btn-primary" ng-click="controller.saveProfile()">Save</button>
+                    <button ng-click="controller.addCategoryToUser(); controller.addSubCategoryToUser()">Test</button>
                 </div><!--row close-->
             </div><!--container close-->
         </div>
+
     </div>
 </div>
 
