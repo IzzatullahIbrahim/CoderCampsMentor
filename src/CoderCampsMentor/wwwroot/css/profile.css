@@ -17,73 +17,10 @@ ul {
     list-style-type: none;
 }
 
-#scatter {
-    margin-top: 10%;
-    color: black;
-}
-
 /*@import url('https://fonts.googleapis.com/css?family=Macondo|Nothing+You+Could+Do');*/
-
-#li-text {
-    color: dimgray;
-}
 
 a, a:hover {
     text-decoration: none;
-}
-
-@keyframes bounce {
-    0%, 100%, 20%, 50%, 80% {
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-        transform: translateY(0);
-    }
-
-    40% {
-        -webkit-transform: translateY(-30px);
-        -ms-transform: translateY(-30px);
-        transform: translateY(-30px);
-    }
-
-    60% {
-        -webkit-transform: translateY(-15px);
-        -ms-transform: translateY(-15px);
-        transform: translateY(-15px);
-    }
-}
-
-#li-text {
-    background: #d10411 ;
-    font-size: 20px;
-    position: absolute;
-    font-family: 'Nothing You Could Do', cursive;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite;
-    color:  ghostwhite;
-}
-
-    #li-text:hover {
-        cursor: pointer;
-        animation-name: bounce;
-        -moz-animation-name: bounce;
-    }
-
-#scat {
-    font-size: 100%;
-    display: inline-block;
-    vertical-align: top;
-    margin-right: calc((20px / 3) - 5px);
-    margin-bottom: 5px;
-    height: 100px;
-    width: calc(25% - 5px);
 }
 
 /*search bar*/
@@ -258,10 +195,12 @@ a, a:hover {
 .tab-content > .active {
     margin-top: 50px; /*width:100% !important;*/
 }
-iframe{
+
+iframe {
     height: 100%;
-    width:100%;
+    width: 100%;
 }
+
 .nav-menu li a {
     margin: 5px 5px 5px 5px;
     position: relative;
@@ -354,17 +293,19 @@ h4.pro-title {
 .nav-menu li.active a {
     background-color: rgb(255, 102, 0) !important;
 }
-.user-bio{
+
+.user-bio {
     width: 1000px;
-    max-width:1000px;
-    max-height:90px;
-	height: 90px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
+    max-width: 1000px;
+    max-height: 90px;
+    height: 90px;
+    border: 3px solid #cccccc;
+    padding: 5px;
+    font-family: Tahoma, sans-serif;
 }
-#save{
-    width:20%;
-    height:5%;
-    font-size:130%;
+
+#save {
+    width: 20%;
+    height: 5%;
+    font-size: 130%;
 }
