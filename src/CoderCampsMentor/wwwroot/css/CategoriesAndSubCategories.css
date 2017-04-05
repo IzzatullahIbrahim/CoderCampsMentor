@@ -1,0 +1,92 @@
+﻿.li-text {
+    font-size: 20px;
+    font-family: 'Nothing You Could Do', cursive;
+    text-transform: uppercase;
+    color: ghostwhite;
+}
+
+.outer-scatter {
+    margin-top: 7.5%;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 4.5%;
+}
+
+.inner-scatter {
+    float: left;
+    width: 17%;
+    height: 300px;
+    margin-right: 30px;
+}
+
+    .inner-scatter:hover {
+        cursor: pointer;
+        animation-name: bounce;
+        -moz-animation-name: bounce;
+
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+    }
+
+@keyframes bounce {
+    0%, 100%, 20%, 50%, 80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    60% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+.scatter-content {
+    border: 5px solid #d10411;
+    height: 89%;
+    border-radius: 5px;
+}
+
+.scatter-image {
+    height:72.5%;
+    padding:5%;
+}
+
+.make-center {
+    width: 80%;
+    margin:auto;
+    padding-left: 9.4%;
+}
+
+.scatter-name {
+    background: #d10411;
+    text-align:center;
+    padding-top: 12.5%;
+    height: 27.5%;
+}
+
+.margin-search-1 {
+    margin-left: 0px;
+    padding-left: 8.1%;
+    margin-top: -7.5%;
+    padding-bottom: 0.75%;
+    height: 11.5%;
+}
+
+.scatter-image-2 {
+    height: 100%;
+    width: 100%;
+}

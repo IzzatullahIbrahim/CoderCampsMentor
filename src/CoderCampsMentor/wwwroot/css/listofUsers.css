@@ -755,21 +755,28 @@
 }
 
 .listofUsersContainer {
-    padding-left: 79px;
-    padding-right: -50px;
-    margin-top: 10px;
+    padding-left: 128px;
     min-height: 80%;
+    padding-top:5%;
 }
 
 .user-style {
-    width: 43%;
+    width: 40%;
     border: 1px solid;
     height: 100px;
     float: left;
-    margin-right: 69.6px;
+    margin-right: 85px;
     margin-bottom: 20px;
 }
 
 .add-float {
     display: inline-block;
+}
+
+.margin-search-2 {
+    margin-left: 0px;
+    padding-left: 8.1%;
+    padding-bottom: 0.75%;
+    margin-bottom: 1.5%;
+    height:11.5%;
 }
