@@ -28,7 +28,7 @@
 
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="dp navbar-img"><a ui-sref="profile({id: account.getUserId()})" ng-show="account.isLoggedIn()"><img class="dp" ng-src="{{account.getPicture()}}" id="exit-video-call-1"/></a></li>
+                <li class="dp navbar-img"><a ui-sref="profile({id: account.getUserId()})" ng-show="account.isLoggedIn()"><img class="dp" ng-src="{{account.getPicture()}}" id="exit-video-call-1" /></a></li>
                 <li class="navbar-img text-align-center" ng-show="account.isLoggedIn()">
                     <p>{{account.getUserName()}}</p>
                 </li>
@@ -227,26 +227,56 @@
                         <div id="myDIV">
                             <div class="container fluid outer-video-container">
 
-                                <div class="make-center">
-                                    <input type="text" id="room-id" value="abcdef">
+                                <div class="outer-video-button">
+                                    <div class="bs-calltoaction bs-calltoaction-danger inner-video-button">
+                                        <div class="row">
+                                            <div id="public-explanation">
+                                                <div class="col-md-9 cta-contents">
+                                                    <h1 class="cta-title">Public Room</h1>
+                                                    <div class="cta-desc">
+                                                        <p>You're going to enter public room</p>
+                                                        <p>It's designed to contain 6 people</p>
+                                                        <p>There's no limitation on number of people joining</p>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                    <button id="enter-room">Enter Room</button>
+                                            <div id="private-explanation">
+                                                <div class="col-md-9 cta-contents">
+                                                    <h1 class="cta-title">Private Room</h1>
+                                                    <div class="cta-desc">
+                                                        <p>You're going to enter private room</p>
+                                                        <p>It's designed to contain 2 people</p>
+                                                        <p>You can also chat and share file inside</p>
+                                                        <span><input type="text" id="room-id" value="not-working" hidden></span>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                    <br><br>
-                                    <input type="text" id="input-text-chat" placeholder="Enter Text Chat" disabled>
-                                    <button id="share-file" ng-click="controller.shareFile()">Share File</button>
+                                            <div class="buttons">
+                                                <div class="col-md-3 cta-button">
+                                                    <button id="enter-room" class="btn btn-lg btn-block btn-ours">Enter Room</button>
+                                                </div>
 
-                                    <br><br>
-                                    <button id="disconnect" disabled>Disconnect</button>
+                                                <div class="col-md-3 cta-button" id="disc-button">
+                                                    <button id="disconnect" class="btn btn-lg btn-block btn-ours" disabled>Disconnect</button>
+                                                </div>
+                                            </div>
 
-                                    <div id="room-urls"></div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="video">
+                                <div class="video hide-before" id="video-hide">
                                     <div id="videos-container"></div>
                                 </div>
-                                
-                                <div id="chat-container">
+
+                                <div class="text-button hide-before" id="text-hide">
+                                    <input class="text-input" type="text" id="input-text-chat" placeholder="Enter Text Chat" disabled>
+                                    <button class="btn btn-primary share-button" id="share-file" ng-click="controller.shareFile()">Share File</button>
+                                </div>
+
+                                <div id="chat-container" class="chat-box">
                                     <div id="file-container"></div>
                                     <div class="chat-output"></div>
                                 </div>
