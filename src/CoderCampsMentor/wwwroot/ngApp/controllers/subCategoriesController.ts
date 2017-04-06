@@ -19,10 +19,15 @@
 
     export class SubCategoryController {
         public message = 'Hello from sub category page';
+        public catSubCategory;
         public subCategory;
 
         constructor(private $http: ng.IHttpService, private $stateParams: ng.ui.IStateParamsService) {
             let scId = this.$stateParams['id'];
+
+            this.$http.get('/api/subCatCategories/' + scId).then((response) => {
+                this.catSubCategory = response.data;
+            })
 
             this.$http.get('/api/subCategories/' + scId).then((response) => {
                 this.subCategory = response.data;
