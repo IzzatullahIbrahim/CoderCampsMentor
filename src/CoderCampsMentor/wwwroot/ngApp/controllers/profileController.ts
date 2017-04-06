@@ -19,7 +19,7 @@
         }
     }
 
-    export class ProfileController {
+    export class EditProfileController {
         public file;
         public user;
         public categories;
@@ -87,7 +87,7 @@
             }
             this.profileService.saveProfile(this.user)
                 .then((data) => {
-                 this.$state.transitionTo('profile');
+                 //this.$state.transitionTo('profile');
                 }).catch(() => {
                     console.log("something went wrong");
                 })
@@ -109,13 +109,15 @@
         }
         public addCategoryToUser() {
             this.$http.post('/api/userCategories', this.UserCategory).then((response) => {
-                this.$state.go('home');
+                //this.$state.go('home');
+                this.$state.reload();
             });
 
         }
         public addSubCategoryToUser() {
             this.$http.post('/api/userSubCategories', this.UserSubCategory).then((response) => {
-                this.$state.go('home');
+                //this.$state.go('home');
+                this.$state.reload();
             });
         }
         public getCategories() {

@@ -4,7 +4,7 @@
     padding: 15px 25px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 2.5px;
 }
 
     .bs-calltoaction > .row{
@@ -68,6 +68,9 @@
 
 .outer-video-button {
     height: 30%;
+    margin-top: 1.75%;
+    margin-left: -1%;
+    margin-right: -1%;
 }
 
 .inner-video-button {
@@ -91,11 +94,14 @@
 
 .text-button {
     height: 10%;
+    margin-left: -1%;
+    margin-right: -1%;
+    padding-top: 0.5%;
 }
 
 .text-input {
     display: inline-block;
-    width: 92.1%;
+    width: 92.26%;
     height: 52.5%;
     border-radius: 2.5px;
 }
@@ -109,4 +115,12 @@
     overflow: scroll;
     border: 2.5px solid #d10411;
     border-radius: 2.5px;
+    margin-left: -1%;
+    margin-right: -1%;
+}
+
+.video {
+    margin-left: -1%;
+    margin-right: -1%;
+    margin-top: 1.25%;
 }
