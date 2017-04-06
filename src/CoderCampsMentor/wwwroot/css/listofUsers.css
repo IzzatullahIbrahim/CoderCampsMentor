@@ -618,7 +618,7 @@
 }
 
 .kl-b-danger {
-    background: #d9534f;
+    background: #d10411;
 }
 
 .kl-b-info {
@@ -779,4 +779,8 @@
     padding-bottom: 0.75%;
     margin-bottom: 1.5%;
     height:11.5%;
+}
+
+.border-red {
+    border: 1px solid #d10411;
 }

@@ -1,124 +1,145 @@
 ﻿<div ng-show="account.isLoggedIn()">
-    <div class="container" style="margin-top: 30px;">
+    <div class="profile-header">
         <div class="profile-head">
             <div class="profile-pic col-md- col-sm-4 col-xs-12">
                 <img ng-src="{{controller.userCategories.picture}}" class="img-responsive" />
-                <h6>{{controller.userCategories.firstName}} {{controller.userCategories.lastName}}</h6>
             </div>
+
             <div class="user_info col-md-5 col-sm-5 col-xs-12">
                 <h5>{{controller.userCategories.firstName}} {{controller.userCategories.lastName}}</h5>
                 <p>{{controller.userCategories.occupation}}</p>
                 <ul>
                     <li><span class="glyphicon glyphicon-briefcase"></span> {{controller.userCategories.experience}} Years</li>
-                    <li><span class="glyphicon glyphicon-home"></span> {{controller.userCategories.location}}</li>
+                    <li><span class="glyphicon glyphicon-map-marker"></span> {{controller.userCategories.location}}</li>
                     <li><span class="glyphicon glyphicon-phone"></span> {{controller.userCategories.phoneNumber}}</li>
-                    <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail"> {{controller.userCategories.email}}</a></li>
+                    <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail">{{controller.userCategories.email}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div id="sticky" class="container">
-        <ul class="nav nav-tabs nav-menu" role="tablist">
-            <li>
-                <a ui-sref="editProfile({id: account.getUserId()})" role="tab" data-toggle="tab">
+
+    <div id="sticky" class="edit-profile-button">
+        <ul class="nav nav-tabs nav-menu">
+            <li class="active even-width">
+                <a href="#">
+                    <i class="fa fa-male"></i> Profile
+                </a>
+            </li>
+            <li class="even-width">
+                <a ui-sref="editProfile({id: account.getUserId()})">
                     <i class="fa fa-key"></i> Edit Profile
                 </a>
             </li>
         </ul>
     </div>
 
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="profile">
-            <div class="container">
-                <div class="col-sm-11" style="float:left;">
-                    <div class="hve-pro">
-                        <p>{{controller.userCategories.bio}}</p>
-                    </div><!--hve-pro close-->
-                </div><!--col-sm-12 close-->
-                <br clear="all" />
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4 class="pro-title"><strong>User Info</strong></h4>
-                    </div><!--col-md-12 close-->
-                    <div class="col-md-6">
-                        <div class="table-responsive responsiv-table">
-                            <table class="table bio-table">
-                                <tbody>
-                                    <tr>
-                                        <td>Firstname</td>
-                                        <td>: {{controller.userCategories.firstName}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Lastname</td>
-                                        <td>: {{controller.userCategories.lastName}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Birthday</td>
-                                        <td>: {{controller.userCategories.birthday}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Location</td>
-                                        <td>: {{controller.userCategories.location}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Occupation</td>
-                                        <td>: {{controller.userCategories.occupation}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div><!--table-responsive close-->
-                    </div><!--col-md-6 close-->
-                    <div class="col-md-6">
-                        <div class="table-responsive responsiv-table">
-                            <table class="table bio-table">
-                                <tbody>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td>: {{controller.userCategories.email}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phone</td>
-                                        <td>: {{controller.userCategories.phoneNumber}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Experience</td>
-                                        <td>: {{controller.userCategories.experience}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>GitHub</td>
-                                        <td>: <a href="{{controller.userCategories.githubLink}}"> {{controller.userCategories.githubLink}}</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div><!--table-responsive close-->
-                    </div><!--col-md-6 close-->
-                    <h4 class="pro-title"><strong>Concentration</strong></h4>
-                    <div class="col-md-6">
-                        <div class="table-responsive responsiv-table">
-                            <table class="table bio-table">
-                                <tbody>
-                                    <tr ng-repeat="cat in controller.userCategories.categories">
-                                        <td>Courses</td>
-                                        <td>: {{cat.categoryName}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="table-responsive responsiv-table">
-                            <table class="table bio-table">
-                                <tbody>
-                                    <tr ng-repeat="subCat in controller.userSubCategories.subCategories">
-                                        <td>Lessons</td>
-                                        <td>: {{subCat.subCategoryName}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div><!--row close-->
-            </div><!--container close-->
+    <div class="tab-pane container-fluid">
+        <div class="hve-pro">
+            <p>{{controller.userCategories.bio}}</p>
+        </div>
+
+        <div class="outer-most">
+            <div class="part">
+                <h4 class="pro-title"><strong>User Info</strong></h4>
+            </div>
+
+            <div class="table-responsive table-information-1">
+                <div>
+                    <div class="even-name col-form-label">First Name</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.userCategories.firstName" disabled>
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Last Name</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.userCategories.lastName" disabled>
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Birthday</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.userCategories.birthday" disabled>
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Location</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.userCategories.location" disabled>
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Occupation</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.userCategories.occupation" disabled>
+                </div>
+            </div>
+
+            <div class="table-responsive table-information-2">
+                <div>
+                    <div class="even-name col-form-label">Email</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.userCategories.email" disabled>
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Phone Number</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.userCategories.phoneNumber" disabled>
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Experience</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.userCategories.experience" disabled>
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Github</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.userCategories.githubLink" disabled>
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label"></div>
+                    <div class="middle-dot"></div>
+                    <input class="form-control even-input special-one" type="text">
+                </div>
+            </div>
+
+            <div class="mid-header">
+                <h4 class="pro-title"><strong>Concentration</strong></h4>
+            </div>
+            
+            <div class="table-responsive table-information-3">
+                <div>
+                    <div class="even-name col-form-label">Courses</div>
+                    <div class="middle-dot"></div>
+                    <input class="form-control even-input special-one" type="text" disabled>
+                </div>
+
+                <div ng-repeat="cat in controller.userCategories.categories">
+                    <div class="even-name col-form-label"></div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="cat.categoryName" disabled>
+                </div>
+
+            </div>
+
+            <div class="table-responsive table-information-4">
+                <div>
+                    <div class="even-name col-form-label">Lessons</div>
+                    <div class="middle-dot"></div>
+                    <input class="form-control even-input special-one" type="text" disabled>
+                </div>
+
+                <div ng-repeat="subCat in controller.userSubCategories.subCategories">
+                    <div class="even-name col-form-label"></div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="subCat.subCategoryName" disabled>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

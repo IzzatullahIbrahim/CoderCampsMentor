@@ -12,21 +12,16 @@
 /// <reference path="../bower_components/jquery-validation/dist/jquery.validate.js" />
 /// <reference path="../bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
 /// <reference path="lib/Navbar.js" />
-<<<<<<< HEAD
 /// <reference path="lib/videoCall.js" />
-=======
-/// <reference path="lib/videocall.js" />
->>>>>>> 59e4b2a12ace46cdfcbd31a32d5f75b600fd99f1
-/// <reference path="ngapp/app.js" />
-/// <reference path="ngapp/controllers/accountcontroller.js" />
-/// <reference path="ngapp/controllers/applicationuserscontroller.js" />
-/// <reference path="ngapp/controllers/categoriescontroller.js" />
-/// <reference path="ngapp/controllers/controllers.js" />
-/// <reference path="ngapp/controllers/inboxcontroller.js" />
-/// <reference path="ngapp/controllers/profilecontroller.js" />
-/// <reference path="ngapp/controllers/subcategoriescontroller.js" />
-/// <reference path="ngapp/controllers/videocallcontroller.js" />
-/// <reference path="ngapp/services/accountservice.js" />
-/// <reference path="ngapp/services/commservice.js" />
-/// <reference path="ngapp/services/profileservice.js" />
-/// <reference path="ngapp/services/services.js" />
+/// <reference path="ngApp/app.js" />
+/// <reference path="ngApp/controllers/accountController.js" />
+/// <reference path="ngApp/controllers/applicationUsersController.js" />
+/// <reference path="ngApp/controllers/categoriesController.js" />
+/// <reference path="ngApp/controllers/controllers.js" />
+/// <reference path="ngApp/controllers/inboxController.js" />
+/// <reference path="ngApp/controllers/profileController.js" />
+/// <reference path="ngApp/controllers/subCategoriesController.js" />
+/// <reference path="ngApp/services/accountService.js" />
+/// <reference path="ngApp/services/CommService.js" />
+/// <reference path="ngApp/services/profileService.js" />
+/// <reference path="ngApp/services/services.js" />

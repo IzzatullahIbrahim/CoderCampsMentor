@@ -1,148 +1,170 @@
 ﻿<div ng-show="account.isLoggedIn()">
-    <div class="container" style="margin-top: 30px;">
+    <div class="profile-header">
         <div class="profile-head">
             <div class="profile-pic col-md- col-sm-4 col-xs-12">
                 <img ng-src="{{controller.user.picture}}" class="img-responsive" />
-                <h6>{{controller.user.firstName}} {{controller.user.lastName}}</h6>
             </div>
+
             <div class="user_info col-md-5 col-sm-5 col-xs-12">
                 <h5>{{controller.user.firstName}} {{controller.user.lastName}}</h5>
                 <p>{{controller.user.occupation}}</p>
                 <ul>
                     <li><span class="glyphicon glyphicon-briefcase"></span> {{controller.user.experience}} Years</li>
-                    <li><span class="glyphicon glyphicon-home"></span> {{controller.user.location}}</li>
+                    <li><span class="glyphicon glyphicon-map-marker"></span> {{controller.user.location}}</li>
                     <li><span class="glyphicon glyphicon-phone"></span> {{controller.user.phoneNumber}}</li>
-                    <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail"> {{controller.user.email}}</a></li>
+                    <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail">{{controller.user.email}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div id="sticky" class="container">
-        <form ng-submit="controller.saveProfile()">
-            <ul class="nav nav-tabs nav-menu" role="tablist">
 
-                <li>
-                    <a ng-click="controller.pickFile()" role="tab" data-toggle="tab">
-                        <i class="fa fa-file"></i> Upload Image
-                    </a>
-                </li>
-            </ul>
-        </form>
+    <div id="sticky" class="edit-profile-button">
+        <ul class="nav nav-tabs nav-menu">
+            <li class="active even-width">
+                <a ui-sref="profile({id: account.getUserId()})">
+                    <i class="fa fa-male"></i> Profile
+                </a>
+            </li>
+            <li class="even-width">
+                <a ui-sref="#">
+                    <i class="fa fa-key"></i> Edit Profile
+                </a>
+            </li>
+            <li class="even-width">
+                <a ng-click="controller.pickFile()" role="tab" data-toggle="tab">
+                    <i class="fa fa-file"></i> Upload Image
+                </a>
+            </li>
+        </ul>
     </div>
 
-
-
-    <div class="tab-content">
-        <div class="tab-pane fade active in" id="profile">
-            <div class="container">
-                <div class="col-sm-11" style="float:left;">
-                    <div class="hve-pro">
-                        <form>
-                            <textarea ng-model="controller.user.bio" class="user-bio" />
-                        </form>
-                    </div><!--hve-pro close-->
-                </div><!--col-sm-12 close-->
-                <br clear="all" />
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4 class="pro-title"><strong>User Info</strong></h4>
-                    </div><!--col-md-12 close-->
-
-                    <div class="col-md-6">
-                        <div class="table-responsive responsiv-table">
-                            <table class="table bio-table">
-                                <tbody>
-                                    <tr>
-                                        <td>FirstName</td>
-                                        <td>: <input ng-model="controller.user.firstName" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Lastname</td>
-                                        <td>: <input ng-model="controller.user.lastName" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Birthday</td>
-                                        <td>: <input ng-model="controller.user.birthday" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Location</td>
-                                        <td>
-                                            : <select ng-model="controller.user.location">
-                                                <option value="Seattle, WA">Seattle, WA</option>
-                                                <option value="Phoenix, AZ">Phoenix, AZ</option>
-                                                <option value="Houston, TX">Houston, TX</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Occupation</td>
-                                        <td>: <input ng-model="controller.user.occupation" /></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div><!--table-responsive close-->
-                    </div><!--col-md-6 close-->
-                    <div class="col-md-6">
-                        <div class="table-responsive responsiv-table">
-                            <table class="table bio-table">
-                                <tbody>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td>: <input ng-model="controller.user.email" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phone</td>
-                                        <td>: <input ng-model="controller.user.phoneNumber" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Experience</td>
-                                        <td>: <input ng-model="controller.user.experience" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>GitHub</td>
-                                        <td>: <input ng-model="controller.user.githubLink" /></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div><!--table-responsive close-->
-                    </div><!--col-md-6 close-->
-                    <h4 class="pro-title"><strong>Concentration</strong></h4>
-                    <div class="col-md-6">
-                        <div class="table-responsive responsiv-table">
-                            <table class="table bio-table">
-                                <tbody>
-                                    <tr ng-repeat="cat in controller.categories">
-                                        <td>Courses</td>
-                                        <td>: {{cat.categoryName}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="table-responsive responsiv-table">
-                        <!--  <table class="table bio-table">
-                                <tbody>
-                                    <tr ng-repeat="subCat in controller.subCategories">
-                                        <td>Lessons</td>
-                                        <td>: {{subCat.subCategoryName}} <input type="checkbox" ng-model="controller.UserCategory.subCategories" ng-true-value="'{{subCat.subCategoryName}} Added'" ng-false-value="'{{subCat.subCategoryName}} Removed'" /></td>
-
-                                </tbody>
-                            </table> -->  
-                            <select ng-model="controller.UserCategory.categories" ng-options="cat as cat.categoryName for cat in controller.categories track by cat.id" multiple></select>
-
-
-                            <select ng-model="controller.UserSubCategory.subCategories" ng-options="subCat as subCat.subCategoryName for subCat in controller.subCategories" multiple></select>
-                        </div>
-                    </div>
-
-                    <button id="save" class="fa fa-floppy-o btn btn-primary" ng-click="controller.saveProfile()">Save</button>
-                    <button ng-click="controller.addCategoryToUser(); controller.addSubCategoryToUser()">Test</button>
-                </div><!--row close-->
-            </div><!--container close-->
+    <div class="tab-pane container-fluid">
+        <div class="hve-pro-2">
+            <form>
+                <textarea ng-model="controller.user.bio" class="user-bio" />
+            </form>
         </div>
 
+        <div class="outer-most">
+            <div class="part">
+                <h4 class="pro-title"><strong>User Info</strong></h4>
+            </div>
+
+            <div class="table-responsive table-information-1">
+                <div>
+                    <div class="even-name col-form-label">First Name</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.user.firstName">
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Last Name</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.user.lastName">
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Birthday</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.user.birthday">
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Location</div>
+                    <div class="middle-dot">:</div>
+                    <select class="form-control even-input bit-margin" ng-model="controller.user.location">
+                        <option selected disabled hidden>{{controller.user.location}}</option>
+                        <option value="Seattle, WA">Seattle, WA</option>
+                        <option value="Phoenix, AZ">Phoenix, AZ</option>
+                        <option value="Houston, TX">Houston, TX</option>
+                    </select>
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Occupation</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.user.occupation">
+                </div>
+            </div>
+
+            <div class="table-responsive table-information-2">
+                <div>
+                    <div class="even-name col-form-label">Email</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.user.email">
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Phone Number</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.user.phoneNumber">
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Experience</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.user.experience">
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label">Github</div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="controller.user.githubLink">
+                </div>
+
+                <div>
+                    <div for="example-text-input" class="even-name col-form-label"></div>
+                    <div class="middle-dot"></div>
+                    <input class="form-control even-input special-one" type="text">
+                </div>
+            </div>
+
+            <div class="mid-header">
+                <h4 class="pro-title"><strong>Concentration</strong></h4>
+            </div>
+
+            <div class="table-responsive table-information-3">
+                <div>
+                    <div class="even-name col-form-label">Courses</div>
+                    <div class="middle-dot"></div>
+                    <input class="form-control even-input special-one" type="text" disabled>
+                </div>
+
+                <div ng-repeat="cat in controller.UserCategory.categories">
+                    <div class="even-name col-form-label"></div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="cat.categoryName" disabled>
+                </div>
+            </div>
+
+            <div class="table-responsive table-information-4">
+                <div>
+                    <div class="even-name col-form-label">Lessons</div>
+                    <div class="middle-dot"></div>
+                    <input class="form-control even-input special-one" type="text" disabled>
+                </div>
+
+                <div ng-repeat="subCat in controller.UserSubCategory.subCategories">
+                    <div class="even-name col-form-label"></div>
+                    <div class="middle-dot">:</div>
+                    <input class="form-control even-input" type="text" ng-model="subCat.subCategoryName" disabled>
+                </div>
+            </div>
+
+            <div class="bottom-header">
+                <h4 class="pro-title"><strong>Add multiple courses and lessons</strong></h4>
+            </div>
+
+            <div class="multiple-categories">
+                <select class="form-control categories" ng-model="controller.UserCategory.categories" ng-options="cat as cat.categoryName for cat in controller.categories track by cat.id" multiple></select>
+            </div>
+
+            <div class="multiple-sub-categories">
+                <select class="form-control sub-categories" ng-model="controller.UserSubCategory.subCategories" ng-options="subCat as subCat.subCategoryName for subCat in controller.subCategories" multiple></select>
+            </div>
+            
+            <a id="save" class="fa fa-floppy-o btn btn-primary save-button" ng-click="controller.saveProfile(); controller.addCategoryToUser(); controller.addSubCategoryToUser()" ui-sref="profile({id: account.getUserId()})">Save</a>
+
+        </div>
     </div>
 </div>
-
-
