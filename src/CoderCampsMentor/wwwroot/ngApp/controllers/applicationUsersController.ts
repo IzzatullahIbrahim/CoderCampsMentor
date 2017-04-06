@@ -10,6 +10,7 @@
             });
         }
     }
+
     export class ApplicationUserController {
         public message = 'Hello from the user categories page';
         public userCategory;
