@@ -111,6 +111,18 @@ namespace CoderCampsMentor {
                 controller: CoderCampsMentor.Controllers.AboutController,
                 controllerAs: 'controller'
             })
+            //.state('inbox', {
+            //    url: '/inbox',
+            //    templateUrl: '/ngApp/views/inbox.html',
+            //    controller: CoderCampsMentor.Controllers.MessageController,
+            //    controllerAs: 'controller'
+            //})
+            //.state('message', {
+            //    url: '/inbox/:id',
+            //    templateUrl: '/ngApp/views/message.html',
+            //    controller: CoderCampsMentor.Controllers.MessageInfoController,
+            //    controllerAs: 'controller'
+            //})
             .state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'
