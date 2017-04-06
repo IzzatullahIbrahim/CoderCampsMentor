@@ -12,7 +12,11 @@
 /// <reference path="../bower_components/jquery-validation/dist/jquery.validate.js" />
 /// <reference path="../bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
 /// <reference path="lib/Navbar.js" />
+<<<<<<< HEAD
+/// <reference path="lib/videoCall.js" />
+=======
 /// <reference path="lib/videocall.js" />
+>>>>>>> 59e4b2a12ace46cdfcbd31a32d5f75b600fd99f1
 /// <reference path="ngapp/app.js" />
 /// <reference path="ngapp/controllers/accountcontroller.js" />
 /// <reference path="ngapp/controllers/applicationuserscontroller.js" />
@@ -26,5 +30,5 @@
 /// <reference path="ngapp/controllers/videocallcontroller.js" />
 /// <reference path="ngapp/services/accountservice.js" />
 /// <reference path="ngapp/services/commservice.js" />
+/// <reference path="ngapp/services/messageservice.js" />
 /// <reference path="ngapp/services/profileservice.js" />
-/// <reference path="ngapp/services/services.js" />
