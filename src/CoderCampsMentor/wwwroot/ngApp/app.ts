@@ -90,7 +90,7 @@ namespace CoderCampsMentor {
             .state('editProfile', {
                 url: '/editProfile/:id',
                 templateUrl: '/ngApp/views/editProfile.html',
-                controller: CoderCampsMentor.Controllers.ProfileController,
+                controller: CoderCampsMentor.Controllers.EditProfileController,
                 controllerAs: 'controller'
             })
             .state('secret', {
