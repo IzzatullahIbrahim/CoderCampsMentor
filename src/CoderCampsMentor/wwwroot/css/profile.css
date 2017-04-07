@@ -315,12 +315,6 @@ h4.pro-title {
     margin-left:1.25%;
 }
 
-#save {
-    width: 20%;
-    height: 5%;
-    font-size: 130%;
-}
-
 .user_info {
     margin-left: 7.5%;
 }
@@ -443,6 +437,11 @@ h4.pro-title-2 {
 }
 
 .save-button {
-    margin-left:78%;
+    margin-left:80%;
     margin-top: 1%;
+}
+
+.marg-top {
+    margin-top: 10px;
+    background-color: #eee;
 }

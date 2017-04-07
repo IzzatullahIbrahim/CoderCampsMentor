@@ -30,9 +30,15 @@
                     <i class="fa fa-key"></i> Edit Profile
                 </a>
             </li>
-            <li class="even-width">
-                <a ng-click="controller.pickFile()" role="tab" data-toggle="tab">
+            <li class="active even-width">
+                <a ng-click="controller.pickFile()">
                     <i class="fa fa-file"></i> Upload Image
+                </a>
+            </li>
+
+            <li class="even-width">
+                <a ng-click="controller.saveProfile()" ui-sref="profile({id: account.getUserId()})">
+                    <i class="fa fa-floppy-o"></i> Save Profile
                 </a>
             </li>
         </ul>
@@ -163,7 +169,14 @@
                 <select class="form-control sub-categories" ng-model="controller.UserSubCategory.subCategories" ng-options="subCat as subCat.subCategoryName for subCat in controller.subCategories" multiple></select>
             </div>
             
-            <a id="save" class="fa fa-floppy-o btn btn-primary save-button" ng-click="controller.saveProfile(); controller.addCategoryToUser(); controller.addSubCategoryToUser()" ui-sref="profile({id: account.getUserId()})">Save</a>
+
+            <a class="save-button btn btn-success" ng-click="controller.addCategoryToUser(); controller.addSubCategoryToUser()" ui-sref="profile({id: account.getUserId()})">
+                <i class="fa fa-floppy-o"></i> Save Courses and Lessons
+            </a>
+
+            <!--<a id="save" class="fa fa-floppy-o save-button" ng-click="controller.addCategoryToUser(); controller.addSubCategoryToUser()" ui-sref="profile({id: account.getUserId()})">
+                Save Courses and Lessons
+            </a>-->
 
         </div>
     </div>
