@@ -6,7 +6,7 @@ namespace CoderCampsMentor {
         $locationProvider: ng.ILocationProvider,
         filepickerProvider
     ) => {
-        filepickerProvider.setKey('AksRZcU5qRLawgTdZmZfpz');
+        filepickerProvider.setKey('AFebasFQ6TtGy673tIBzOz');
         // Define routes
         $stateProvider
             .state('home', {
