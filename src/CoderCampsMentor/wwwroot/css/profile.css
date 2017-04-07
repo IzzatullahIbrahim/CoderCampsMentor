@@ -446,3 +446,8 @@ h4.pro-title-2 {
     margin-left:78%;
     margin-top: 1%;
 }
+
+.marg-top {
+    margin-top: 10px;
+    background-color: #eee;
+}

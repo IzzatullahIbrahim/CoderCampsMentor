@@ -18,17 +18,10 @@
         </div>
     </div>
 
-    <div id="sticky" class="edit-profile-button">
-        <ul class="nav nav-tabs nav-menu">
-            <li class="active even-width">
-                <a href="#">
-                    <i class="fa fa-male"></i> Profile
-                </a>
-            </li>
+    <div class="edit-profile-button add-thing">
+        <ul class="nav">
             <li class="even-width">
-                <a ui-sref="editProfile({id: account.getUserId()})">
-                    <i class="fa fa-key"></i> Edit Profile
-                </a>
+
             </li>
         </ul>
     </div>
@@ -97,7 +90,11 @@
                 <div>
                     <div for="example-text-input" class="even-name col-form-label">Github</div>
                     <div class="middle-dot">:</div>
-                    <input class="form-control even-input" type="text" ng-model="controller.userCategory.githubLink" disabled>
+                    <span class="form-control even-input marg-top" ng-model="controller.userCategories.githubLink">
+                        <a href="{{controller.userCategories.githubLink}}">
+                            {{controller.userCategories.githubLink}}
+                        </a>
+                    </span>
                 </div>
 
                 <div>
@@ -119,9 +116,13 @@
                 </div>
 
                 <div ng-repeat="cat in controller.userCategory.categories">
-                    <div class="even-name col-form-label"></div>
+                    <div for="example-text-input" class="even-name col-form-label"></div>
                     <div class="middle-dot">:</div>
-                    <input class="form-control even-input" type="text" ng-model="cat.categoryName" disabled>
+                    <span class="form-control even-input marg-top" ng-model="cat.categoryName">
+                        <a ui-sref="category({id: cat.id})">
+                            {{cat.categoryName}}
+                        </a>
+                    </span>
                 </div>
 
             </div>
@@ -134,9 +135,13 @@
                 </div>
 
                 <div ng-repeat="subCat in controller.userSubCategory.subCategories">
-                    <div class="even-name col-form-label"></div>
+                    <div for="example-text-input" class="even-name col-form-label"></div>
                     <div class="middle-dot">:</div>
-                    <input class="form-control even-input" type="text" ng-model="subCat.subCategoryName" disabled>
+                    <span class="form-control even-input marg-top" ng-model="subCat.subCategoryName">
+                        <a ui-sref="subCategory({id: subCat.id})">
+                            {{subCat.subCategoryName}}
+                        </a>
+                    </span>
                 </div>
             </div>
 
