@@ -87,7 +87,7 @@
             }
             this.profileService.saveProfile(this.user)
                 .then((data) => {
-                 //this.$state.transitionTo('profile');
+                    //this.$state.transitionTo('profile');
                 }).catch(() => {
                     console.log("something went wrong");
                 })
