@@ -88,6 +88,8 @@
             this.profileService.saveProfile(this.user)
                 .then((data) => {
                     //this.$state.transitionTo('profile');
+
+                    location.reload();
                 }).catch(() => {
                     console.log("something went wrong");
                 })

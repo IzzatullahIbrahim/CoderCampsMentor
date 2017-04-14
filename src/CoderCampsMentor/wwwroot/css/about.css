@@ -1,0 +1,55 @@
+﻿.modal-1 {
+    margin-top: 1.5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    padding-top: 1.6%;
+    padding-bottom: 0.5%;
+    width: 48.95%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #EEE;
+}
+
+.modal-2 {
+    margin-top: 1.5%;
+    margin-left: 49.95%;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    padding-top: 1.6%;
+    padding-bottom: 0.5%;
+    width: 48.95%;
+    text-align:center;
+    border-radius: 5px;
+    background-color: #EEE;
+}
+
+.modal-3 {
+    margin-top: 1.5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    padding-top: 1.6%;
+    padding-bottom: 0.5%;
+    width: 48.95%;
+    text-align:center;
+    background-color: #EEE;
+    border-radius: 5px;
+}
+
+.about-picture {
+    height: 140px;
+    width: 140px;
+}
+
+.up-bit {
+    margin-top: -3%;
+}
+
+.rebecca-purple {
+    background-color:rebeccapurple;
+}
+
+.light-purple {
+    background-color:mediumpurple;
+}
